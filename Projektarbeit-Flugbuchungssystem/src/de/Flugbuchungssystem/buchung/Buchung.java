@@ -1,4 +1,4 @@
-package de.Flugbuchenngssystem.buchung;
+package de.Flugbuchungssystem.buchung;
 
 public class Buchung {
 	//test

@@ -1,4 +1,4 @@
-package de.Flugbuchenngssystem.stammdaten;
+package de.Flugbuchungssystem.stammdaten;
 
 public class Passagier {
 //test
