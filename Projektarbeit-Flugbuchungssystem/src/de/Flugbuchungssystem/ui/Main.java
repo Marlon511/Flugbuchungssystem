@@ -8,7 +8,7 @@ import de.Flugbuchungssystem.buchung.*;
 public class Main {
 
 	public static void main(String[] args) {
-		Flugzeug f1 = new Flugzeug("A380", "LH-1512",0,0,0,4,12,3);
+		Flugzeug f1 = new Flugzeug("A380", "LH-1512",1,1,0,4,12,3);
 
 		for (Sitz s : f1.getSitze()) {
         System.out.println(s.getSitzName() + " - " + s.getKategorie());
