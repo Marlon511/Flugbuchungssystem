@@ -5,15 +5,17 @@ import java.util.List;
 public class Flugzeug {
 
     private String modell;
+    private String kennung;
     private List<Sitz> sitze;
 
     public Flugzeug(
-            String modell,
+            String modell, String kennung,
             int firstSitze, int firstReihen,
             int businessSitze, int businessReihen,
             int economySitze, int economyReihen
     ) {
         this.modell = modell;
+        this.kennung = kennung;
         this.sitze = new ArrayList<>();
 
         char reihe = 'A';

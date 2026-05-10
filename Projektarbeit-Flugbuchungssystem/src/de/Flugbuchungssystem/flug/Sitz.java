@@ -5,25 +5,29 @@ public class Sitz {
 	private char reihe;
 	private int platz;
     private SitzKategorie kategorie;
-    private boolean gebucht;
+    private boolean belegt;
 
     public Sitz(char reihe, int platz, SitzKategorie kategorie) {
     		this.reihe = reihe;
     		this.platz = platz;
     		this.kategorie = kategorie;
-    		this.gebucht = false;
+    		this.belegt = false;
     	}
 
     public String getSitzName() {
     		return "" + reihe + platz;
     }
 
-    public boolean isGebucht() {
-    		return gebucht;
+    public boolean isBelegt() {
+    		return belegt;
     }
 
-    public void buche() {
-		this.gebucht = true;
+    public void belegen() {
+		this.belegt = true;
+	}
+    
+    public void freigeben() {
+		this.belegt = false;
 	}
 
 	public SitzKategorie getKategorie() {
