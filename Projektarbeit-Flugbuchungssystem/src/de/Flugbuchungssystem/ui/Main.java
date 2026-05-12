@@ -3,14 +3,52 @@ package de.Flugbuchungssystem.ui;
 import de.Flugbuchungssystem.flug.*;
 import de.Flugbuchungssystem.service.*;
 import de.Flugbuchungssystem.stammdaten.*;
+
+import java.util.List;
+
 import de.Flugbuchungssystem.buchung.*;
 
 public class Main {
 
 	public static void main(String[] args) {
-		Flugzeug f1 = new Flugzeug("A380", "LH-1512",1,1,0,4,12,3);
+        // Flugzeug erstellen
+        Flugzeug flugzeug = new Flugzeug(
+                "Boeing 747", "D-ABCD",
+                4, 2,    // 4 First-Sitze, 2 Reihen → A1-A2, B1-B2
+                6, 2,    // 6 Business-Sitze, 2 Reihen → C1-C3, D1-D3
+                10, 2    // 10 Economy-Sitze, 2 Reihen → E1-E5, F1-F5
+        );
 
-		for (Sitz s : f1.getSitze()) {
+        // --- getFreieSitze testen ---
+        System.out.println("=== Freie Economy-Sitze ===");
+        List<Sitz> freieEconomy = flugzeug.getFreieSitze(SitzKategorie.ECONOMY);
+        for (Sitz s : freieEconomy) {
+            System.out.println(s.getSitzName());
+        }
+
+        // Einen Sitz belegen
+        flugzeug.findeSitz("E1").belegen();
+        flugzeug.findeSitz("E2").belegen();
+
+        System.out.println("\n=== Freie Economy-Sitze nach Belegung ===");
+        freieEconomy = flugzeug.getFreieSitze(SitzKategorie.ECONOMY);
+        for (Sitz s : freieEconomy) {
+            System.out.println(s.getSitzName());
+        }
+
+        // --- findeSitz testen ---
+        System.out.println("\n=== findeSitz testen ===");
+
+        Sitz suche = flugzeug.findeSitz("A1");
+        if (suche == null) {
+            System.out.println("Sitz " + suche.getSitzName() + "Z9 nicht gefunden.");
+        }
+        if (suche != null) {
+            System.out.println("Gefunden: " + suche.getSitzName() + " | Belegt: " + suche.isBelegt());
+        }
+        
+        // Alle Sitze ausgeben
+		for (Sitz s : flugzeug.getSitze()) {
         System.out.println(s.getSitzName() + " - " + s.getKategorie());
 		}
 

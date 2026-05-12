@@ -64,4 +64,31 @@ public class Flugzeug {
     public List<Sitz> getSitze() {
         return sitze;
     }
+    
+    public String getKennung() {
+    		return kennung;
+    }
+    
+    public String getModell() {
+    		return modell;
+    }
+    
+    public List<Sitz> getFreieSitze(SitzKategorie kategorie) {
+        List<Sitz> freieSitze = new ArrayList<>();
+        for (Sitz sitz : sitze) {
+            if (sitz.getKategorie() == kategorie && !sitz.isBelegt()) {
+                freieSitze.add(sitz);
+            }
+        }
+        return freieSitze;
+    }
+
+    public Sitz findeSitz(String sitznummer) {
+        for (Sitz sitz : sitze) {
+            if (sitz.getSitzName().equals(sitznummer)) {
+                return sitz;
+            }
+        }
+        return null;
+    }
 }
