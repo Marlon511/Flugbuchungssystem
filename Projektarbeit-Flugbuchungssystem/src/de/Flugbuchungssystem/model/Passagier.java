@@ -1,4 +1,4 @@
-package de.Flugbuchungssystem.stammdaten;
+package de.Flugbuchungssystem.model;
 
 public class Passagier {
 

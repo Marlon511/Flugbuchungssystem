@@ -1,12 +1,9 @@
 
 package de.Flugbuchungssystem.ui;
-import de.Flugbuchungssystem.flug.*;
+import de.Flugbuchungssystem.model.*;
 import de.Flugbuchungssystem.service.*;
-import de.Flugbuchungssystem.stammdaten.*;
-
 import java.util.List;
 
-import de.Flugbuchungssystem.buchung.*;
 
 public class Main {
 

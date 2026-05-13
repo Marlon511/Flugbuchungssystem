@@ -1,4 +1,4 @@
-package de.Flugbuchungssystem.flug;
+package de.Flugbuchungssystem.model;
 
 public enum SitzKategorie {
 

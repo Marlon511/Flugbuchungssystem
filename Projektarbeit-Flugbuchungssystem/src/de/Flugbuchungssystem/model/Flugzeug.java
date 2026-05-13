@@ -1,4 +1,4 @@
-package de.Flugbuchungssystem.flug;
+package de.Flugbuchungssystem.model;
 import java.util.ArrayList;
 import java.util.List;
 
