@@ -7,6 +7,11 @@ import java.util.List;
 public class Main {
 
 	public static void main(String[] args) {
+		
+		// Flughafen testen
+		Flughafen f1 = new Flughafen("Frankfurt Airport", "FRA", "Frankfurt am Main","DE");
+		System.out.println(f1.toString());
+		
         // Flugzeug erstellen
         Flugzeug flugzeug = new Flugzeug(
                 "Boeing 747", "D-ABCD",
