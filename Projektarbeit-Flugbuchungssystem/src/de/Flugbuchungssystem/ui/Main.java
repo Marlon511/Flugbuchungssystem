@@ -1,7 +1,6 @@
 
 package de.Flugbuchungssystem.ui;
 import de.Flugbuchungssystem.model.*;
-import de.Flugbuchungssystem.service.*;
 import java.util.List;
 
 
