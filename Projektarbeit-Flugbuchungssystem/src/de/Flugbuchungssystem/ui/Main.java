@@ -14,7 +14,7 @@ public class Main {
 		
         // Flugzeug erstellen
         Flugzeug flugzeug = new Flugzeug(
-                "Boeing 747", "D-ABCD",
+                "Boeing 747", "D-ABCD", f1,
                 4, 2,    // 4 First-Sitze, 2 Reihen → A1-A2, B1-B2
                 6, 2,    // 6 Business-Sitze, 2 Reihen → C1-C3, D1-D3
                 10, 2    // 10 Economy-Sitze, 2 Reihen → E1-E5, F1-F5
@@ -52,6 +52,16 @@ public class Main {
 		for (Sitz s : flugzeug.getSitze()) {
         System.out.println(s.getSitzName() + " - " + s.getKategorie());
 		}
+		
+		//Flugzeug Standort testen
+		System.out.println(flugzeug.getStandort());
+		
+		//Fluggesellschaft testen
+		System.out.println("\n=== Fluggesellschaft testen ===");
+		Fluggesellschaft gesellschaft1 = new Fluggesellschaft("Lufthansa", "LH");
+		gesellschaft1.addFlugzeug(flugzeug);
+		gesellschaft1.setHeimflughafen(f1);
+		System.out.println("Der Heimflughafen ist: "+gesellschaft1.getHeimflughafen());
 
 	}
 

@@ -1,5 +1,6 @@
 package de.Flugbuchungssystem.model;
 import java.util.ArrayList;
+import de.Flugbuchungssystem.model.*;
 import java.util.List;
 
 public class Flugzeug {
@@ -7,9 +8,10 @@ public class Flugzeug {
     private String modell;
     private String kennung;
     private List<Sitz> sitze;
+    private Flughafen standort; 
 
     public Flugzeug(
-            String modell, String kennung,
+            String modell, String kennung, Flughafen standort, 
             int firstSitze, int firstReihen,
             int businessSitze, int businessReihen,
             int economySitze, int economyReihen
@@ -17,6 +19,7 @@ public class Flugzeug {
         this.modell = modell;
         this.kennung = kennung;
         this.sitze = new ArrayList<>();
+        this.standort = standort;
 
         char reihe = 'A';
 
@@ -71,6 +74,10 @@ public class Flugzeug {
     
     public String getModell() {
     		return modell;
+    }
+    
+    public String getStandort() {
+    		return  "\n" + "Das Flugzeug befindet sich aktuell in: " + standort.getStadt() + ".";
     }
     
     public List<Sitz> getFreieSitze(SitzKategorie kategorie) {
