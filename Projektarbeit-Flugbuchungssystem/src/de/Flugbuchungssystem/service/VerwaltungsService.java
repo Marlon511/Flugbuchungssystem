@@ -57,7 +57,7 @@ public class VerwaltungsService {
             }
         }
         int frei = gesamt - belegt;
-        System.out.println(flug.getFlugnummer() + " | " + flug.getRoute()
+        System.out.println(flug.getFlugnummer() + " | " + flug.baueRoute()
                 + " | Belegt: " + belegt + " | Frei: " + frei + " | Gesamt: " + gesamt);
     }
 

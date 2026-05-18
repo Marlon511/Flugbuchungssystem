@@ -27,7 +27,7 @@ public class SitzplanService {
      * @param flug der Flug, dessen Sitzplan ausgegeben werden soll
      */
     public void zeigeSitzplan(Flug flug) {
-        System.out.println("=== Sitzplan: " + flug.getFlugnummer() + " (" + flug.getRoute() + ") ===");
+        System.out.println("=== Sitzplan: " + flug.getFlugnummer() + " (" + flug.baueRoute() + ") ===");
         for (Sitz sitz : flug.getFlugzeug().getSitze()) {
             String status = sitz.isBelegt() ? "BELEGT" : "FREI";
             System.out.println(sitz.getSitzName() + " | " + sitz.getKategorie() + " | " + status);

@@ -270,7 +270,7 @@ public class Main {
         System.out.println("\n--- Sitzplan anzeigen ---");
         System.out.println("Verfügbare Flüge:");
         for (Flug f : flugRepo.getAlleFluege()) {
-            System.out.println("  " + f.getFlugnummer() + " | " + f.getRoute());
+            System.out.println("  " + f.getFlugnummer() + " | " + f.baueRoute());
         }
         System.out.print("Flugnummer: ");
         String flugnummer = scanner.nextLine().trim().toUpperCase();
@@ -290,7 +290,7 @@ public class Main {
         System.out.println("\n--- Freie Sitze anzeigen ---");
         System.out.println("Verfügbare Flüge:");
         for (Flug f : flugRepo.getAlleFluege()) {
-            System.out.println("  " + f.getFlugnummer() + " | " + f.getRoute());
+            System.out.println("  " + f.getFlugnummer() + " | " + f.baueRoute());
         }
         System.out.print("Flugnummer: ");
         String flugnummer = scanner.nextLine().trim().toUpperCase();
@@ -350,7 +350,7 @@ public class Main {
         System.out.println("\n--- Gepäckübersicht ---");
         System.out.println("Verfügbare Flüge:");
         for (Flug f : flugRepo.getAlleFluege()) {
-            System.out.println("  " + f.getFlugnummer() + " | " + f.getRoute());
+            System.out.println("  " + f.getFlugnummer() + " | " + f.baueRoute());
         }
         System.out.print("Flugnummer: ");
         String flugnummer = scanner.nextLine().trim().toUpperCase();

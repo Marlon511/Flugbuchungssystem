@@ -163,7 +163,7 @@ public class Buchung {
 	 */
 	public String toString() {
 		return buchungsnummer + " | " + passagier.getVollerName()
-				+ " | " + flug.getRoute()
+				+ " | " + flug.baueRoute()
 				+ " | " + sitz.getSitzName()
 				+ " | " + status
 				+ " | " + gesamtpreis + " EUR";

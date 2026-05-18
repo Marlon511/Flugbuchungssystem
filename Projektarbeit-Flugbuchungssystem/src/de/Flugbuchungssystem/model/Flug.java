@@ -138,7 +138,7 @@ public class Flug {
 	 *
 	 * @return die Route als Zeichenkette
 	 */
-	public String getRoute() {
+	public String baueRoute() {
 		return start.getIataCode() + " → " + ziel.getIataCode();
 	}
 
@@ -182,6 +182,6 @@ public class Flug {
 	 * @return formatierte Zeichenkette mit Flugnummer, Route und Zeiten
 	 */
 	public String toString() {
-		return flugnummer + " | " + getRoute() + " | " + abflugzeit + " → " + ankunftszeit;
+		return flugnummer + " | " + baueRoute() + " | " + abflugzeit + " → " + ankunftszeit;
 	}
 }
