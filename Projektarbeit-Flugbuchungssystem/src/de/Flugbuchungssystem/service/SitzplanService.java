@@ -14,11 +14,7 @@ import de.Flugbuchungssystem.model.SitzKategorie;
  */
 public class SitzplanService {
 
-    /**
-     * Erstellt einen neuen SitzplanService.
-     */
-    public SitzplanService() {
-    }
+
 
     /**
      * Gibt den vollständigen Sitzplan eines Fluges auf der Konsole aus.
@@ -29,7 +25,12 @@ public class SitzplanService {
     public void zeigeSitzplan(Flug flug) {
         System.out.println("=== Sitzplan: " + flug.getFlugnummer() + " (" + flug.baueRoute() + ") ===");
         for (Sitz sitz : flug.getFlugzeug().getSitze()) {
-            String status = sitz.isBelegt() ? "BELEGT" : "FREI";
+            String status; 
+            if (sitz.isBelegt()) {
+                status = "BELEGT";
+            } else {
+                status = "FREI";
+            }
             System.out.println(sitz.getSitzName() + " | " + sitz.getKategorie() + " | " + status);
         }
     }

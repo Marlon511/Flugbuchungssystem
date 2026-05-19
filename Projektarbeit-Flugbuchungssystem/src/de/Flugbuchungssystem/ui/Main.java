@@ -48,6 +48,7 @@ public class Main {
     static Flughafen frankfurt;
     static Flughafen newYork;
     static Flughafen muenchen;
+    static Flughafen dubai;
 
     public static void main(String[] args) {
         testdatenAnlegen();
@@ -377,16 +378,21 @@ public class Main {
         frankfurt = new Flughafen("Frankfurt am Main", "FRA", "Frankfurt", "DE");
         newYork   = new Flughafen("John F. Kennedy International", "JFK", "New York", "US");
         muenchen  = new Flughafen("München Franz Josef Strauss", "MUC", "München", "DE");
+        dubai	  = new Flughafen("Dubai International Airport", "DXB", "Dubai", "VAE");
 
         Fluggesellschaft lufthansa = new Fluggesellschaft("Lufthansa", "LH");
+        Fluggesellschaft emirates = new Fluggesellschaft("Emirates", "UAE");
 
         Flugzeug flugzeug1 = new Flugzeug("Boeing 747", "D-ABCD", frankfurt,
                 4, 2, 20, 4, 120, 20);
         Flugzeug flugzeug2 = new Flugzeug("Airbus A320", "D-EFGH", muenchen,
                 0, 0, 12, 2, 144, 24);
+        Flugzeug flugzeug3 = new Flugzeug("Boeing 777", "A6-EDN", dubai,
+                6, 6, 12, 6, 24, 6);
 
         lufthansa.addFlugzeug(flugzeug1);
         lufthansa.addFlugzeug(flugzeug2);
+        emirates.addFlugzeug(flugzeug3);
 
         Flug flug1 = new Flug("LH400", lufthansa, frankfurt, newYork,
                 LocalDateTime.of(2026, 6, 1, 10, 0),
@@ -397,12 +403,26 @@ public class Main {
                 LocalDateTime.of(2026, 6, 1, 8, 0),
                 LocalDateTime.of(2026, 6, 1, 9, 15),
                 89.99, flugzeug2);
+        
+        Flug flug3 = new Flug("EK051", emirates, dubai, frankfurt,
+                LocalDateTime.of(2026, 6, 1, 10, 0),
+                LocalDateTime.of(2026, 6, 12, 17, 10),
+                534.99, flugzeug3);
+        
+        Flug flug4 = new Flug("EK052", emirates, dubai, frankfurt,
+                LocalDateTime.of(2026, 6, 1, 15, 0),
+                LocalDateTime.of(2026, 6, 12, 22, 10),
+                534.99, flugzeug3);
 
         lufthansa.addFlug(flug1);
         lufthansa.addFlug(flug2);
+        emirates.addFlug(flug3);
+        emirates.addFlug(flug4);
         flugRepo.addFlug(flug1);
         flugRepo.addFlug(flug2);
+        flugRepo.addFlug(flug3);
+        flugRepo.addFlug(flug4);
 
-        System.out.println("Testdaten geladen. Flüge: LH400 (FRA→JFK) | LH200 (MUC→FRA)");
+        System.out.println("Testdaten geladen. Flüge: LH400 (FRA→JFK) | LH200 (MUC→FRA) | EK051 (DXB→FRA) | EK052 (DXB→FRA)");
     }
 }
