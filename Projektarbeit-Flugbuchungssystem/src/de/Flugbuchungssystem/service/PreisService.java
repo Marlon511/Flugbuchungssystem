@@ -28,7 +28,7 @@ public class PreisService {
     public double berechnePreis(Flug flug, SitzKategorie kategorie, int gepaeckAnzahl) {
         double ticketpreis = flug.getBasispreis() * kategorie.getPreisMultiplikator();
         double gepaeckgebuehr = berechneGepaeckgebuehr(gepaeckAnzahl);
-        return ticketpreis + gepaeckgebuehr;
+        return Math.round((ticketpreis + gepaeckgebuehr) * 100.0) / 100.0;
     }
 
     /**

@@ -1,13 +1,10 @@
 package de.Flugbuchungssystem.service;
 
-import de.Flugbuchungssystem.model.Buchung;
-import de.Flugbuchungssystem.model.Buchungsstatus;
-import de.Flugbuchungssystem.exception.SitzNichtVerfuegbarException;
-import de.Flugbuchungssystem.exception.UngueltigeSitznummerException;
-import de.Flugbuchungssystem.model.Flug;
-import de.Flugbuchungssystem.model.Sitz;
-import de.Flugbuchungssystem.service.interfaces.IBuchungsRepository;
-import de.Flugbuchungssystem.service.interfaces.IUmbuchungsService;
+import de.Flugbuchungssystem.model.*;
+import de.Flugbuchungssystem.exception.*;
+import de.Flugbuchungssystem.model.*;
+import de.Flugbuchungssystem.service.interfaces.*;
+
 
 /**
  * Zuständig für Umbuchungen bestehender Buchungen auf einen neuen Flug.
@@ -37,11 +34,17 @@ public class UmbuchungsService implements IUmbuchungsService {
      * Bucht eine bestehende Buchung auf einen neuen Flug und Sitz um.
      * Gibt den alten Sitz frei, belegt den neuen und aktualisiert Status und Preis.
      * Ein positiver Rückgabewert bedeutet Aufpreis, ein negativer Rückerstattung.
+     * <p>
+     * Eine Umbuchung ist nur möglich, wenn die Buchung den Status
+     * {@link Buchungsstatus#GEBUCHT} oder {@link Buchungsstatus#UMGEBUCHT} hat.
+     * Stornierte Buchungen werden abgelehnt.
+     * </p>
      *
      * @param buchungsnummer  die Buchungsnummer der umzubuchenden Buchung
      * @param neuerFlug       der neue Zielflug
      * @param neueSitznummer  die neue Sitznummer, z.B. „B5"
      * @return die Preisdifferenz in Euro (positiv = Aufpreis, negativ = Rückerstattung)
+     * @throws IllegalStateException          wenn die Buchung bereits storniert ist
      * @throws UngueltigeSitznummerException  wenn die neue Sitznummer nicht existiert
      * @throws SitzNichtVerfuegbarException   wenn der neue Sitz bereits belegt ist
      * @throws de.Flugbuchungssystem.exception.BuchungNichtGefundenException wenn die Buchung nicht existiert
@@ -49,6 +52,11 @@ public class UmbuchungsService implements IUmbuchungsService {
     @Override
     public double bucheUm(String buchungsnummer, Flug neuerFlug, String neueSitznummer) {
         Buchung buchung = buchungsRepo.findeBuchung(buchungsnummer);
+
+        if (buchung.getStatus() == Buchungsstatus.STORNIERT) {
+            throw new IllegalStateException(
+                "Buchung " + buchungsnummer + " ist storniert und kann nicht umgebucht werden.");
+        }
 
         Sitz neuerSitz = neuerFlug.getFlugzeug().findeSitz(neueSitznummer);
         if (neuerSitz == null) {
@@ -61,16 +69,14 @@ public class UmbuchungsService implements IUmbuchungsService {
         double alterPreis = buchung.getGesamtpreis();
         double neuerPreis = preisService.berechnePreis(neuerFlug, neuerSitz.getKategorie(), buchung.getGepaeckAnzahl());
 
-        // Alten Sitz freigeben, neuen Sitz belegen
         buchung.getSitz().freigeben();
         neuerSitz.belegen();
 
-        // Buchung aktualisieren
         buchung.setFlug(neuerFlug);
         buchung.setSitz(neuerSitz);
         buchung.setStatus(Buchungsstatus.UMGEBUCHT);
         buchung.setGesamtpreis(neuerPreis);
 
-        return neuerPreis - alterPreis;
+        return Math.round((neuerPreis - alterPreis) * 100.0) / 100.0;
     }
 }

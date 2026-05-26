@@ -75,6 +75,6 @@ public class StornoService {
      * @return der Rückerstattungsbetrag in Euro
      */
     public double berechneRueckerstattung(Buchung buchung) {
-        return buchung.getGesamtpreis() - berechneStornogebuehr(buchung);
+    		return Math.round((buchung.getGesamtpreis() - berechneStornogebuehr(buchung)) * 100.0) / 100.0;
     }
 }
