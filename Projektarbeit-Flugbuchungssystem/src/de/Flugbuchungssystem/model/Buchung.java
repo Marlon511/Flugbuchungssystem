@@ -1,8 +1,5 @@
 package de.Flugbuchungssystem.model;
 
-import de.Flugbuchungssystem.model.*;
-
-
 /**
  * Das zentrale Verbindungsobjekt des Buchungssystems.
  * Verknüpft {@link Passagier}, {@link Flug} und {@link Sitz} und speichert

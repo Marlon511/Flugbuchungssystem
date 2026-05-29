@@ -72,4 +72,22 @@ public class FlugRepository implements IFlugRepository {
         Flug zuLoeschen = findeFlug(flugnummer);
         fluege.remove(zuLoeschen);
     }
+    
+    /**
+     * Gibt alle Flüge einer bestimmten Fluggesellschaft zurück.
+     * Filtert die gesamte Flugliste anhand der Fluggesellschaft des jeweiligen Fluges.
+     *
+     * @param airline die gesuchte Fluggesellschaft
+     * @return Liste aller Flüge dieser Gesellschaft, leer wenn keine vorhanden
+     */
+    @Override
+    public List<Flug> getFluegeVonAirline(Fluggesellschaft airline) {
+        List<Flug> ergebnis = new ArrayList<>();
+        for (Flug flug : fluege) {
+            if (flug.getAirline().equals(airline)) {
+                ergebnis.add(flug);
+            }
+        }
+        return ergebnis;
+    }
 }

@@ -21,9 +21,6 @@ public class Fluggesellschaft {
 	/** Alle Flugzeuge, die zur Flotte dieser Gesellschaft gehören. */
 	private List<Flugzeug> flotte;
 
-	/** Alle Flüge, die von dieser Gesellschaft angeboten werden. */
-	private List<Flug> fluege;
-
 	/**
 	 * Erstellt eine neue Fluggesellschaft mit leerem Fuhrpark und leerer Flugliste.
 	 *
@@ -34,7 +31,6 @@ public class Fluggesellschaft {
 		this.name = name;
 		this.code = code;
 		this.flotte = new ArrayList<>();
-		this.fluege = new ArrayList<>();
 		this.heimflughafen = null;
 	}
 
@@ -45,15 +41,6 @@ public class Fluggesellschaft {
 	 */
 	public void addFlugzeug(Flugzeug flugzeug) {
 		this.flotte.add(flugzeug);
-	}
-
-	/**
-	 * Registriert einen neuen Flug bei dieser Fluggesellschaft.
-	 *
-	 * @param flug der hinzuzufügende Flug
-	 */
-	public void addFlug(Flug flug) {
-		this.fluege.add(flug);
 	}
 
 	/**
@@ -76,15 +63,6 @@ public class Fluggesellschaft {
 	 */	
 	public Flughafen getHeimflughafen() {
 		return heimflughafen;
-	}
-
-	/**
-	 * Gibt alle Flüge der Fluggesellschaft zurück.
-	 *
-	 * @return Liste aller Flüge
-	 */
-	public List<Flug> getFluege() {
-		return fluege;
 	}
 
 	/**

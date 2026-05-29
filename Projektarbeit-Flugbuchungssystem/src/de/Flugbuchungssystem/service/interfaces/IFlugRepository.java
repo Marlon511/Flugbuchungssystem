@@ -40,4 +40,12 @@ public interface IFlugRepository {
      * @throws de.Flugbuchungssystem.exception.FlugNichtVerfuegbarException wenn kein Flug mit dieser Nummer existiert
      */
     void loescheFlug(String flugnummer);
+    
+    /**
+     * Gibt alle Flüge einer bestimmten Fluggesellschaft zurück.
+     *
+     * @param airline die gesuchte Fluggesellschaft
+     * @return Liste aller Flüge dieser Gesellschaft, leer wenn keine vorhanden
+     */
+    List<Flug> getFluegeVonAirline(Fluggesellschaft airline);
 }

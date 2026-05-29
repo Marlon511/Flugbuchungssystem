@@ -212,13 +212,17 @@ public class Main {
             System.out.print("Telefon: ");
             String telefon = scanner.nextLine().trim();
             
-            //Validierung einfügen
             if (!istGueltigerName(vorname)) {
                 System.out.println("Fehler: Der Vorname darf keine Zahlen enthalten.");
                 return;
             }
             if (!istGueltigerName(nachname)) {
                 System.out.println("Fehler: Der Nachname darf keine Zahlen enthalten.");
+                return;
+            }
+            
+            if (!istGueltigeTelefonnummer(telefon)) {
+                System.out.println("Fehler: Die Telefonnummer darf nur Ziffern sowie +, -, (), Leerzeichen enthalten.");
                 return;
             }
             passagier = new Passagier(vorname, nachname, email, telefon);
@@ -248,12 +252,16 @@ public class Main {
         System.out.print("Sitznummer (z.B. A1): ");
         String sitznummer = scanner.nextLine().trim().toUpperCase();
 
-        System.out.print("Anzahl Gepäckstücke: ");
-        int gepaeckAnzahl = 0;
+        System.out.print("Anzahl Gepäckstücke (mind. 1): ");
+        int gepaeckAnzahl = 1;
         try {
             gepaeckAnzahl = Integer.parseInt(scanner.nextLine().trim());
+            if (gepaeckAnzahl < 1) {
+                System.out.println("Fehler: Gepäckanzahl darf nicht negativ sein.");
+                return;
+            }
         } catch (NumberFormatException e) {
-            System.out.println("Ungültige Eingabe — Gepäck wird auf 0 gesetzt.");
+            System.out.println("Ungültige Eingabe — Gepäck wird auf 1 gesetzt.");
         }
 
         try {
@@ -513,6 +521,37 @@ public class Main {
         }
         return true;
     }
+    
+    /**
+     * Prüft, ob eine Telefonnummer ausschließlich aus erlaubten Zeichen besteht.
+     * <p>
+     * Die Methode iteriert über jedes Zeichen der Eingabe.
+     * Erlaubt sind Ziffern (0–9), das Pluszeichen {@code +} für internationale
+     * Vorwahlen (z.B. „+49"), Bindestriche {@code -}, runde Klammern {@code (} und
+     * {@code )} sowie Leerzeichen zur Gliederung.
+     * Sobald ein Zeichen gefunden wird, das keiner dieser Kategorien angehört
+     * (insbesondere Buchstaben), gilt die Nummer als ungültig.
+     * </p>
+     * <p>
+     * Beispiele für gültige Eingaben: {@code "+49 170 1234567"},
+     * {@code "030-123456"}, {@code "(089) 98765"}.
+     * </p>
+     *
+     * @param nummer die zu prüfende Telefonnummer
+     * @return {@code true}, wenn die Nummer nicht leer ist und nur erlaubte
+     *         Zeichen enthält, sonst {@code false}
+     */
+    private static boolean istGueltigeTelefonnummer(String nummer) {
+        if (nummer.isEmpty()) {
+            return false;
+        }
+        for (char c : nummer.toCharArray()) {
+            if (!Character.isDigit(c) && c != '+' && c != '-' && c != ' ' && c != '(' && c != ')') {
+                return false;
+            }
+        }
+        return true;
+    }
 
     /**
      * Legt alle Testdaten einmalig beim Programmstart an.
@@ -559,10 +598,6 @@ public class Main {
                 LocalDateTime.of(2026, 6, 12, 22, 10),
                 534.99, flugzeug3);
 
-        lufthansa.addFlug(flug1);
-        lufthansa.addFlug(flug2);
-        emirates.addFlug(flug3);
-        emirates.addFlug(flug4);
         flugRepo.addFlug(flug1);
         flugRepo.addFlug(flug2);
         flugRepo.addFlug(flug3);
