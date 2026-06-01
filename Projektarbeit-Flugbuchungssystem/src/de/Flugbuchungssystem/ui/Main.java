@@ -46,10 +46,11 @@ public class Main {
         TestdatenFactory.laden(flughafenRepo, flugRepo, passagierRepo);
 
         // UI starten
-        new KonsolenUI(
+        KonsolenUI ui = new KonsolenUI(
             flughafenRepo, flugRepo, buchungsRepo, passagierRepo,
             buchungsService, umbuchungsService, flugSuchService,
             sitzplanService, verwaltungsService
-        ).starten();
+        );
+        ui.starten();
     }
 }
