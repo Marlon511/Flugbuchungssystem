@@ -13,29 +13,13 @@ import java.util.List;
 public class Buchung implements Serializable {
 
 	private static final long serialVersionUID = 1L;
-
-	/** Zähler zur automatischen Vergabe eindeutiger Buchungsnummern. */
 	private static int zaehler = 1;
-
-	/** Die eindeutige Buchungsnummer, z.B. „BU-0001". */
 	private String buchungsnummer;
-
-	/** Der Passagier, der diese Buchung vorgenommen hat. */
 	private Passagier passagier;
-
-	/** Der gebuchte Flug. */
 	private Flug flug;
-
-	/** Der zugewiesene Sitzplatz. */
 	private Sitz sitz;
-
-	/** Die Anzahl der aufgegebenen Gepäckstücke. */
 	private int gepaeckAnzahl;
-
-	/** Der aktuelle Status dieser Buchung. */
 	private Buchungsstatus status;
-
-	/** Der Gesamtpreis der Buchung in Euro inklusive Gepäck. */
 	private double gesamtpreis;
 
 	/**
