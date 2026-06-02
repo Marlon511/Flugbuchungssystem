@@ -8,7 +8,6 @@ public class SitzNichtVerfuegbarException extends RuntimeException {
 
     /**
      * Erstellt eine neue Ausnahme mit einer Nachricht, die die Sitznummer enthält.
-     *
      * @param sitznummer die Sitznummer des bereits belegten Sitzes, z.B. „A3"
      */
     public SitzNichtVerfuegbarException(String sitznummer) {

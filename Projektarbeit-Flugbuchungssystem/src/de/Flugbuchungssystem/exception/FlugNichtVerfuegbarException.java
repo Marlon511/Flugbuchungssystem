@@ -8,7 +8,6 @@ public class FlugNichtVerfuegbarException extends RuntimeException {
 
     /**
      * Erstellt eine neue Ausnahme mit einer Nachricht, die die Flugnummer enthält.
-     *
      * @param flugnummer die Flugnummer des nicht verfügbaren Flugs, z.B. „LH400"
      */
     public FlugNichtVerfuegbarException(String flugnummer) {
