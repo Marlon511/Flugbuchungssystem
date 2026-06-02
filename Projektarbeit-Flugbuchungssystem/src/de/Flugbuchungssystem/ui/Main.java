@@ -16,15 +16,13 @@ import de.Flugbuchungssystem.service.VerwaltungsService;
 
 /**
  * Einstiegspunkt der Anwendung.
- * Erstellt alle Repositories und Services, verdrahtet die Abhängigkeiten
- * und startet die Benutzeroberfläche. Enthält keine Geschäftslogik.
+ * Erstellt alle Repositories und Services.
  */
 public class Main {
 
     /**
      * Startmethode der Anwendung.
      * Initialisiert alle Komponenten und startet das Konsolenmenü.
-     *
      * @param args Kommandozeilenargumente (werden nicht verwendet)
      */
     public static void main(String[] args) {

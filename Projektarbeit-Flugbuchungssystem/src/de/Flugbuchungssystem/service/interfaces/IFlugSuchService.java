@@ -6,15 +6,12 @@ import de.Flugbuchungssystem.model.*;
 
 /**
  * Legt den Vertrag für die Flugsuche fest.
- * Abstrahiert den Suchalgorithmus — die Implementierung kann jederzeit
- * ausgetauscht werden, ohne dass Aufrufer angepasst werden müssen.
  */
 public interface IFlugSuchService {
 
     /**
      * Sucht alle Flüge, die der angegebenen Route und dem optionalen Datum entsprechen.
      * Wird {@code datum} als {@code null} übergeben, wird nur nach Route gefiltert.
-     *
      * @param start das Datum des gewünschten Abflugs, oder {@code null} für alle Daten
      * @param ziel  der gewünschte Zielflughafen
      * @param datum der gewünschte Abflugtag, oder {@code null} für alle Daten

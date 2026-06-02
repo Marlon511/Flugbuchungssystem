@@ -5,21 +5,16 @@ import de.Flugbuchungssystem.model.*;
 
 /**
  * Legt den Vertrag für den Datenzugriff auf Buchungen fest.
- * Services sprechen ausschließlich gegen dieses Interface —
- * nie direkt gegen die konkrete Klasse {@code BuchungsRepository}.
  */
 public interface IBuchungsRepository {
-
     /**
      * Speichert eine neue Buchung im Repository.
-     *
      * @param buchung die zu speichernde Buchung
      */
     void addBuchung(Buchung buchung);
 
     /**
      * Sucht eine Buchung anhand ihrer Buchungsnummer.
-     *
      * @param buchungsnummer die eindeutige Buchungsnummer, z.B. „BU-0001"
      * @return die gefundene {@link Buchung}
      * @throws de.Flugbuchungssystem.exception.BuchungNichtGefundenException wenn keine Buchung mit dieser Nummer existiert
@@ -28,14 +23,12 @@ public interface IBuchungsRepository {
 
     /**
      * Gibt alle gespeicherten Buchungen zurück.
-     *
      * @return Liste aller Buchungen, leer wenn keine vorhanden
      */
     List<Buchung> getAlleBuchungen();
 
     /**
      * Löscht eine Buchung anhand ihrer Buchungsnummer aus dem Repository.
-     *
      * @param buchungsnummer die Buchungsnummer der zu löschenden Buchung
      * @throws de.Flugbuchungssystem.exception.BuchungNichtGefundenException wenn keine Buchung mit dieser Nummer existiert
      */
