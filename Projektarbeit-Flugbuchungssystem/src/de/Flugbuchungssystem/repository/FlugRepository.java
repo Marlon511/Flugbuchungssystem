@@ -1,5 +1,5 @@
 package de.Flugbuchungssystem.repository;
-
+import java.io.Serializable;
 import java.util.ArrayList;
 import java.util.List;
 
@@ -12,7 +12,9 @@ import de.Flugbuchungssystem.service.interfaces.*;
  * Ist der einzige Ort, an dem Flüge gespeichert werden.
  * Enthält keine Geschäftslogik — nur Datenhaltung.
  */
-public class FlugRepository implements IFlugRepository {
+public class FlugRepository implements IFlugRepository, Serializable {
+	
+	private static final long serialVersionUID = 1L;
 
     /** Interne Liste aller gespeicherten Flüge. */
     private ArrayList<Flug> fluege;

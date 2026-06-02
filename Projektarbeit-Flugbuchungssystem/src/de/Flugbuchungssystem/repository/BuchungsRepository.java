@@ -1,5 +1,5 @@
 package de.Flugbuchungssystem.repository;
-
+import java.io.Serializable;
 import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.List;
@@ -13,7 +13,9 @@ import de.Flugbuchungssystem.service.interfaces.IBuchungsRepository;
  * Der Schlüssel ist die Buchungsnummer, dadurch ist der Zugriff in O(1) möglich.
  * Enthält keine Geschäftslogik --> nur Datenhaltung.
  */
-public class BuchungsRepository implements IBuchungsRepository {
+public class BuchungsRepository implements IBuchungsRepository, Serializable {
+	
+	private static final long serialVersionUID = 1L;
 
     /** Interne Zuordnung von Buchungsnummer zu Buchung. */
     private HashMap<String, Buchung> buchungen;

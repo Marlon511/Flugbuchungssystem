@@ -48,7 +48,7 @@ public class TestdatenFactory {
 
         // --- Fluggesellschaften ---
         Fluggesellschaft lufthansa = new Fluggesellschaft("Lufthansa", "LH");
-        Fluggesellschaft emirates  = new Fluggesellschaft("Emirates", "EK");
+        Fluggesellschaft emirates = new Fluggesellschaft("Emirates", "EK");
         Fluggesellschaft airFrance = new Fluggesellschaft("Air France", "AF");
 
         // --- Flugzeuge ---
@@ -59,7 +59,7 @@ public class TestdatenFactory {
         Flugzeug flugzeug3 = new Flugzeug("Boeing 777", "A6-EDN", dubai,
                 6, 6, 12, 6, 24, 6);
         Flugzeug flugzeug4 = new Flugzeug("Airbus A380", "F-HPJA", paris,
-                6, 3, 24, 4, 200, 25);
+                6, 3, 24, 4, 24, 6);
         Flugzeug flugzeug5 = new Flugzeug("Airbus A220", "F-HBIQ", paris,
                 0, 0, 12, 2, 96, 16);
 
@@ -72,59 +72,71 @@ public class TestdatenFactory {
         // --- Flüge ---
         // Lufthansa: FRA → JFK
         flugRepo.addFlug(new Flug("LH400", lufthansa, frankfurt, newYork,
-                LocalDateTime.of(2026, 6, 1, 10, 0),
-                LocalDateTime.of(2026, 6, 1, 20, 30), 499.99, flugzeug1));
+                LocalDateTime.of(2026, 6, 15, 10, 0),
+                LocalDateTime.of(2026, 6, 15, 20, 30), 499.99, flugzeug1));
         flugRepo.addFlug(new Flug("LH402", lufthansa, frankfurt, newYork,
-                LocalDateTime.of(2026, 7, 5, 11, 0),
-                LocalDateTime.of(2026, 7, 5, 21, 30), 519.99, flugzeug1));
+                LocalDateTime.of(2026, 6, 16, 11, 0),
+                LocalDateTime.of(2026, 6, 16, 21, 30), 519.99, flugzeug1));
+        flugRepo.addFlug(new Flug("LH404", lufthansa, frankfurt, newYork,
+                LocalDateTime.of(2026, 6, 17, 9, 0),
+                LocalDateTime.of(2026, 6, 17, 19, 30), 519.99, flugzeug1));
 
         // Lufthansa: MUC → FRA
         flugRepo.addFlug(new Flug("LH200", lufthansa, muenchen, frankfurt,
-                LocalDateTime.of(2026, 6, 1, 8, 0),
-                LocalDateTime.of(2026, 6, 1, 9, 15), 89.99, flugzeug2));
+                LocalDateTime.of(2026, 6, 16, 8, 0),
+                LocalDateTime.of(2026, 6, 16, 9, 15), 89.99, flugzeug2));
         flugRepo.addFlug(new Flug("LH202", lufthansa, muenchen, frankfurt,
-                LocalDateTime.of(2026, 7, 3, 7, 30),
-                LocalDateTime.of(2026, 7, 3, 8, 45), 79.99, flugzeug2));
+                LocalDateTime.of(2026, 6, 17, 7, 30),
+                LocalDateTime.of(2026, 6, 17, 8, 45), 79.99, flugzeug2));
+        flugRepo.addFlug(new Flug("LH204", lufthansa, muenchen, frankfurt,
+                LocalDateTime.of(2026, 6, 18, 8, 30),
+                LocalDateTime.of(2026, 6, 18, 9, 45), 79.99, flugzeug2));
+
 
         // Lufthansa: FRA → LHR
         flugRepo.addFlug(new Flug("LH300", lufthansa, frankfurt, london,
-                LocalDateTime.of(2026, 6, 10, 9, 0),
-                LocalDateTime.of(2026, 6, 10, 10, 45), 129.99, flugzeug2));
+                LocalDateTime.of(2026, 6, 16, 9, 0),
+                LocalDateTime.of(2026, 6, 16, 10, 45), 129.99, flugzeug2));
         flugRepo.addFlug(new Flug("LH302", lufthansa, frankfurt, london,
-                LocalDateTime.of(2026, 7, 14, 14, 0),
-                LocalDateTime.of(2026, 7, 14, 15, 45), 119.99, flugzeug2));
+                LocalDateTime.of(2026, 6, 17, 14, 0),
+                LocalDateTime.of(2026, 6, 17, 15, 45), 119.99, flugzeug2));
+        flugRepo.addFlug(new Flug("LH304", lufthansa, frankfurt, london,
+                LocalDateTime.of(2026, 6, 18, 12, 0),
+                LocalDateTime.of(2026, 6, 18, 13, 45), 119.99, flugzeug2));
 
         // Emirates: DXB → FRA
         flugRepo.addFlug(new Flug("EK051", emirates, dubai, frankfurt,
-                LocalDateTime.of(2026, 6, 1, 10, 0),
-                LocalDateTime.of(2026, 6, 1, 17, 10), 534.99, flugzeug3));
+                LocalDateTime.of(2026, 6, 16, 10, 0),
+                LocalDateTime.of(2026, 6, 16, 17, 10), 534.99, flugzeug3));
         flugRepo.addFlug(new Flug("EK052", emirates, dubai, frankfurt,
-                LocalDateTime.of(2026, 6, 15, 15, 0),
-                LocalDateTime.of(2026, 6, 15, 22, 10), 534.99, flugzeug3));
+                LocalDateTime.of(2026, 6, 17, 15, 0),
+                LocalDateTime.of(2026, 6, 17, 22, 10), 534.99, flugzeug3));
+        flugRepo.addFlug(new Flug("EK053", emirates, dubai, frankfurt,
+                LocalDateTime.of(2026, 6, 18, 13, 0),
+                LocalDateTime.of(2026, 6, 18, 20, 10), 534.99, flugzeug3));
 
         // Air France: FRA → CDG
         flugRepo.addFlug(new Flug("AF100", airFrance, frankfurt, paris,
-                LocalDateTime.of(2026, 6, 5, 7, 0),
-                LocalDateTime.of(2026, 6, 5, 8, 30), 99.99, flugzeug5));
+                LocalDateTime.of(2026, 6, 16, 7, 0),
+                LocalDateTime.of(2026, 6, 16, 8, 30), 99.99, flugzeug5));
         flugRepo.addFlug(new Flug("AF102", airFrance, frankfurt, paris,
-                LocalDateTime.of(2026, 7, 20, 16, 0),
-                LocalDateTime.of(2026, 7, 20, 17, 30), 109.99, flugzeug5));
+                LocalDateTime.of(2026, 6, 17, 16, 0),
+                LocalDateTime.of(2026, 6, 17, 17, 30), 109.99, flugzeug5));
+        flugRepo.addFlug(new Flug("AF104", airFrance, frankfurt, paris,
+                LocalDateTime.of(2026, 6, 18, 15, 0),
+                LocalDateTime.of(2026, 6, 18, 16, 30), 109.99, flugzeug5));
 
         // Air France: CDG → JFK
         flugRepo.addFlug(new Flug("AF200", airFrance, paris, newYork,
-                LocalDateTime.of(2026, 7, 1, 10, 30),
-                LocalDateTime.of(2026, 7, 1, 19, 0), 429.99, flugzeug4));
+                LocalDateTime.of(2026, 6, 16, 10, 30),
+                LocalDateTime.of(2026, 6, 16, 19, 0), 429.99, flugzeug4));
         flugRepo.addFlug(new Flug("AF202", airFrance, paris, newYork,
-                LocalDateTime.of(2026, 8, 10, 11, 0),
-                LocalDateTime.of(2026, 8, 10, 19, 30), 449.99, flugzeug4));
+                LocalDateTime.of(2026, 6, 17, 11, 0),
+                LocalDateTime.of(2026, 6, 17, 19, 30), 449.99, flugzeug4));
+        flugRepo.addFlug(new Flug("AF204", airFrance, paris, newYork,
+                LocalDateTime.of(2026, 6, 18, 9, 0),
+                LocalDateTime.of(2026, 6, 18, 17, 30), 449.99, flugzeug4));
 
-        // --- Passagiere ---
-        passagierRepo.addPassagier(new Passagier("Max", "Mustermann", "maxmustermann@mail.de", "+49 170 1234567"));
-        passagierRepo.addPassagier(new Passagier("Anna", "Schmidt", "annaschmidt@mail.de", "+49 160 9876543"));
-        passagierRepo.addPassagier(new Passagier("John", "Doe", "johndoe@mail.com", "+1 212 5550199"));
-        passagierRepo.addPassagier(new Passagier("Marie", "Dupont", "marieDupton@mail.fr", "+33 6 12345678"));
-        passagierRepo.addPassagier(new Passagier("Lena", "Bauer", "lenabauer@mail.de", "+49 151 2345678"));
-
-        System.out.println("Testdaten geladen: 6 Flughäfen | 3 Airlines | 5 Flugzeuge | 12 Flüge | 5 Passagiere");
+        System.out.println("Testdaten geladen: 6 Flughäfen | 3 Airlines | 5 Flugzeuge | 15 Flüge");
     }
 }

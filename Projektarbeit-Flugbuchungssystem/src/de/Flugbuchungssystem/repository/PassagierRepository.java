@@ -1,5 +1,5 @@
 package de.Flugbuchungssystem.repository;
-
+import java.io.Serializable;
 import java.util.ArrayList;
 import java.util.List;
 
@@ -10,7 +10,9 @@ import de.Flugbuchungssystem.model.Passagier;
  * Ermöglicht die Suche nach E-Mail-Adresse, um zu prüfen ob ein Passagier
  * bereits bekannt ist. Enthält keine Geschäftslogik, nur Datenhaltung.
  */
-public class PassagierRepository {
+public class PassagierRepository implements Serializable {
+	
+	private static final long serialVersionUID = 1L;
 
     /** Interne Liste aller registrierten Passagiere. */
     private ArrayList<Passagier> passagiere;

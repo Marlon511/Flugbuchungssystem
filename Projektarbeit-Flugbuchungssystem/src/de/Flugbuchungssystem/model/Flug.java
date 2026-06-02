@@ -1,5 +1,5 @@
 package de.Flugbuchungssystem.model;
-
+import java.io.Serializable;
 import java.time.LocalDate;
 import java.time.LocalDateTime;
 import java.util.List;
@@ -10,8 +10,10 @@ import de.Flugbuchungssystem.model.*;
  * Bietet Hilfsmethoden zur Suche nach Datum und Route und delegiert
  * Sitzabfragen an das zugewiesene {@link #flugzeug}.
  */
-public class Flug {
-
+public class Flug implements Serializable{
+	
+	private static final long serialVersionUID = 1L;
+	
 	/** Die eindeutige Flugnummer, z.B. „LH400". */
 	private String flugnummer;
 

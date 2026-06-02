@@ -1,5 +1,8 @@
 package de.Flugbuchungssystem.model;
 
+import java.io.Serializable;
+import java.util.List;
+
 /**
  * Das zentrale Verbindungsobjekt des Buchungssystems.
  * Verknüpft {@link Passagier}, {@link Flug} und {@link Sitz} und speichert
@@ -7,7 +10,9 @@ package de.Flugbuchungssystem.model;
  * Die Buchungsnummer wird beim Erstellen automatisch vergeben.
  */
 
-public class Buchung {
+public class Buchung implements Serializable {
+
+	private static final long serialVersionUID = 1L;
 
 	/** Zähler zur automatischen Vergabe eindeutiger Buchungsnummern. */
 	private static int zaehler = 1;
@@ -60,6 +65,28 @@ public class Buchung {
 	 */
 	public String getBuchungsnummer() {
 		return buchungsnummer;
+	}
+
+	public static void aktualisiereZaehler(List<Buchung> buchungen) {
+		int hoechsteNummer = 0;
+
+		for (Buchung buchung : buchungen) {
+			String nummer = buchung.getBuchungsnummer();
+			if (nummer == null || !nummer.startsWith("BU-")) {
+				continue;
+			}
+
+			try {
+				int wert = Integer.parseInt(nummer.substring(3));
+				if (wert > hoechsteNummer) {
+					hoechsteNummer = wert;
+				}
+			} catch (NumberFormatException e) {
+				// Unbekannte Nummernformate werden ignoriert.
+			}
+		}
+
+		zaehler = hoechsteNummer + 1;
 	}
 
 	/**

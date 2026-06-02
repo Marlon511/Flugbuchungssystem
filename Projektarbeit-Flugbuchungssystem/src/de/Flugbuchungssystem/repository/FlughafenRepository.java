@@ -1,5 +1,5 @@
 package de.Flugbuchungssystem.repository;
-
+import java.io.Serializable;
 import java.util.ArrayList;
 import java.util.List;
 
@@ -13,7 +13,9 @@ import de.Flugbuchungssystem.service.interfaces.IFlughafenRepository;
  * Ermöglicht die Suche nach IATA-Code.
  * Enthält keine Geschäftslogik — nur Datenhaltung.
  */
-public class FlughafenRepository implements IFlughafenRepository {
+public class FlughafenRepository implements IFlughafenRepository, Serializable {
+	
+	private static final long serialVersionUID = 1L;
 
     /** Interne Liste aller gespeicherten Flughäfen. */
     private ArrayList<Flughafen> flughaefen;

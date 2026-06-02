@@ -1,11 +1,15 @@
 package de.Flugbuchungssystem.model;
+import java.io.Serializable;
+
 /**
  * Repräsentiert einen realen Flughafen mit allen Stammdaten.
  * Reine Datenklasse ohne Geschäftslogik — nur Getter und {@link #toString()}.
  */
 
-public class Flughafen {
-
+public class Flughafen implements Serializable {
+	
+	private static final long serialVersionUID = 1L;
+	
 	/** Der vollständige Name des Flughafens, z.B. „Frankfurt am Main". */
 	private String name;
 

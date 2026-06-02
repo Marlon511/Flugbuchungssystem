@@ -1,5 +1,5 @@
 package de.Flugbuchungssystem.model;
-
+import java.io.Serializable;
 import java.util.ArrayList;
 import java.util.List;
 
@@ -8,7 +8,9 @@ import java.util.List;
  * Beim Erstellen werden alle Sitze der drei Kategorien (FIRST, BUSINESS, ECONOMY)
  * automatisch generiert und in einer internen Liste gespeichert.
  */
-public class Flugzeug {
+public class Flugzeug implements Serializable {
+	
+	private static final long serialVersionUID = 1L;
 
     /** Das Flugzeugmodell, z.B. „Boeing 747". */
     private String modell;

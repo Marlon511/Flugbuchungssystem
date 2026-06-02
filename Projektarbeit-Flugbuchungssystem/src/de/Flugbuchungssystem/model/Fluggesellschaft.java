@@ -1,5 +1,5 @@
 package de.Flugbuchungssystem.model;
-
+import java.io.Serializable;
 import java.util.ArrayList;
 import java.util.List;
 
@@ -7,7 +7,9 @@ import java.util.List;
  * Repräsentiert eine Fluggesellschaft mit ihrer Flotte und allen angebotenen Flügen.
  * Dient als Ausgangspunkt beim Anlegen von Flugzeugen und Flügen.
  */
-public class Fluggesellschaft {
+public class Fluggesellschaft implements Serializable{
+	
+	private static final long serialVersionUID = 1L;
 
 	/** Der vollständige Name der Fluggesellschaft, z.B. „Lufthansa". */
 	private String name;

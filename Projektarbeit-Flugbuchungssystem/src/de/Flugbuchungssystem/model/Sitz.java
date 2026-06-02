@@ -1,12 +1,15 @@
 package de.Flugbuchungssystem.model;
+import java.io.Serializable;
 
 /**
  * Repräsentiert einen einzelnen Sitzplatz in einem Flugzeug.
  * Jeder Sitz hat eine Reihe (Buchstabe), eine Platznummer und eine {@link SitzKategorie}.
  * Verwaltet außerdem den eigenen Belegungsstatus.
  */
-public class Sitz {
-
+public class Sitz implements Serializable {
+	
+	private static final long serialVersionUID = 1L;
+	
     /** Der Reihenbuchstabe des Sitzes, z.B. 'A'. */
     private char reihe;
 

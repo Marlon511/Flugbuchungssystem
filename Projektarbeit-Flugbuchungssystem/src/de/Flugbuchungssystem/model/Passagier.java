@@ -1,11 +1,14 @@
 package de.Flugbuchungssystem.model;
+import java.io.Serializable;
 
 /**
  * Repräsentiert einen Passagier mit seinen persönlichen Kontaktdaten.
  * Reine Datenklasse ohne Geschäftslogik — nur Getter und {@link #toString()}.
  */
-public class Passagier {
-
+public class Passagier implements Serializable{
+	
+	private static final long serialVersionUID = 1L;
+	
     /** Der Vorname des Passagiers. */
     private String vorname;
 
