@@ -10,13 +10,10 @@ import de.Flugbuchungssystem.service.interfaces.*;
 /**
  * Verwaltet alle Flug-Objekte der Anwendung in einer internen Liste.
  * Ist der einzige Ort, an dem Flüge gespeichert werden.
- * Enthält keine Geschäftslogik — nur Datenhaltung.
  */
 public class FlugRepository implements IFlugRepository, Serializable {
 	
 	private static final long serialVersionUID = 1L;
-
-    /** Interne Liste aller gespeicherten Flüge. */
     private ArrayList<Flug> fluege;
 
     /**
@@ -28,7 +25,6 @@ public class FlugRepository implements IFlugRepository, Serializable {
 
     /**
      * Fügt einen neuen Flug in das Repository ein.
-     *
      * @param flug der hinzuzufügende Flug
      */
     @Override
@@ -37,8 +33,6 @@ public class FlugRepository implements IFlugRepository, Serializable {
     }
 
     /**
-     * Gibt alle gespeicherten Flüge zurück.
-     *
      * @return Liste aller Flüge, leer wenn keine vorhanden
      */
     @Override
@@ -48,7 +42,6 @@ public class FlugRepository implements IFlugRepository, Serializable {
 
     /**
      * Sucht einen Flug anhand seiner Flugnummer.
-     *
      * @param flugnummer die eindeutige Flugnummer, z.B. „LH400"
      * @return der gefundene Flug
      * @throws FlugNichtVerfuegbarException wenn kein Flug mit dieser Nummer existiert
@@ -65,7 +58,6 @@ public class FlugRepository implements IFlugRepository, Serializable {
 
     /**
      * Löscht einen Flug anhand seiner Flugnummer aus dem Repository.
-     *
      * @param flugnummer die Flugnummer des zu löschenden Flugs
      * @throws FlugNichtVerfuegbarException wenn kein Flug mit dieser Nummer existiert
      */
@@ -76,9 +68,7 @@ public class FlugRepository implements IFlugRepository, Serializable {
     }
     
     /**
-     * Gibt alle Flüge einer bestimmten Fluggesellschaft zurück.
      * Filtert die gesamte Flugliste anhand der Fluggesellschaft des jeweiligen Fluges.
-     *
      * @param airline die gesuchte Fluggesellschaft
      * @return Liste aller Flüge dieser Gesellschaft, leer wenn keine vorhanden
      */

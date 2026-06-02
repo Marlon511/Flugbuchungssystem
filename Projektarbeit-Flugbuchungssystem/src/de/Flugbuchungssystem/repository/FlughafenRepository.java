@@ -8,16 +8,13 @@ import de.Flugbuchungssystem.model.Flughafen;
 import de.Flugbuchungssystem.service.interfaces.IFlughafenRepository;
 
 /**
- * Verwaltet alle Flughafen-Objekte der Anwendung in einer internen Liste.
+ * Verwaltet alle Flughafen-Objekte in einer Liste.
  * Ist der einzige Ort, an dem Flughäfen gespeichert werden.
  * Ermöglicht die Suche nach IATA-Code.
- * Enthält keine Geschäftslogik — nur Datenhaltung.
  */
 public class FlughafenRepository implements IFlughafenRepository, Serializable {
 	
 	private static final long serialVersionUID = 1L;
-
-    /** Interne Liste aller gespeicherten Flughäfen. */
     private ArrayList<Flughafen> flughaefen;
 
     /**
@@ -29,7 +26,6 @@ public class FlughafenRepository implements IFlughafenRepository, Serializable {
 
     /**
      * Fügt einen neuen Flughafen in das Repository ein.
-     *
      * @param flughafen der hinzuzufügende Flughafen
      */
     @Override
@@ -38,8 +34,6 @@ public class FlughafenRepository implements IFlughafenRepository, Serializable {
     }
 
     /**
-     * Gibt alle gespeicherten Flughäfen zurück.
-     *
      * @return Liste aller Flughäfen, leer wenn keine vorhanden
      */
     @Override
@@ -49,8 +43,7 @@ public class FlughafenRepository implements IFlughafenRepository, Serializable {
 
     /**
      * Sucht einen Flughafen anhand seines IATA-Codes.
-     * Der Vergleich erfolgt case-insensitiv.
-     *
+     * Groß- und Kleinschreibung wird dabei ignoriert.
      * @param iataCode der dreistellige IATA-Code, z.B. „FRA"
      * @return der gefundene Flughafen
      * @throws FlughafenNichtGefundenException wenn kein Flughafen mit diesem Code existiert
@@ -58,9 +51,11 @@ public class FlughafenRepository implements IFlughafenRepository, Serializable {
     @Override
     public Flughafen findeNachCode(String iataCode) {
         for (Flughafen flughafen : flughaefen) {
+        	// equalsIgnoreCase damit z.B. "fra" und "FRA" gleich behandelt werden
             if (flughafen.getIataCode().equalsIgnoreCase(iataCode)) {
                 return flughafen;
             }
+            
         }
         throw new FlughafenNichtGefundenException(iataCode);
     }

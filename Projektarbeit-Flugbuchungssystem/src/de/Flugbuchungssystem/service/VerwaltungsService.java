@@ -9,22 +9,16 @@ import de.Flugbuchungssystem.service.interfaces.IBuchungsRepository;
 import de.Flugbuchungssystem.service.interfaces.IFlugRepository;
 
 /**
- * Enthält alle Verwaltungs- und Administrationsfunktionen der Anwendung.
- * Zeigt Auslastungsberichte, Gepäckübersichten und Statistiken an.
+ * Zeigt Auslastungsberichte & Gepäckübersichten an.
  * Liest nur aus den Repositories — schreibt und verändert nichts.
  */
 public class VerwaltungsService {
-
-    /** Zugriff auf alle gespeicherten Flüge. */
     private IFlugRepository flugRepo;
-
-    /** Zugriff auf alle gespeicherten Buchungen. */
     private IBuchungsRepository buchungsRepo;
 
     /**
      * Erstellt einen neuen VerwaltungsService.
-     *
-     * @param flugRepo     das Repository für den Zugriff auf Flüge
+     * @param flugRepo das Repository für den Zugriff auf Flüge
      * @param buchungsRepo das Repository für den Zugriff auf Buchungen
      */
     public VerwaltungsService(IFlugRepository flugRepo, IBuchungsRepository buchungsRepo) {
@@ -45,7 +39,6 @@ public class VerwaltungsService {
     /**
      * Gibt die Auslastung eines einzelnen Fluges auf der Konsole aus.
      * Zeigt die Anzahl der belegten und freien Sitze an.
-     *
      * @param flug der auszugebende Flug
      */
     public void auslastungProFlug(Flug flug) {
@@ -64,7 +57,6 @@ public class VerwaltungsService {
     /**
      * Gibt die Gepäckübersicht aller Buchungen für einen bestimmten Flug aus.
      * Zeigt pro Buchung Passagier und Gepäckanzahl an.
-     *
      * @param flug der Flug, für den die Gepäckübersicht ausgegeben werden soll
      */
     public void gepaeckUebersicht(Flug flug) {
@@ -79,8 +71,6 @@ public class VerwaltungsService {
     }
 
     /**
-     * Gibt die Gesamtanzahl aller gespeicherten Buchungen zurück.
-     *
      * @return die Anzahl aller Buchungen
      */
     public int gesamtanzahlBuchungen() {

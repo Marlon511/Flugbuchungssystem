@@ -7,14 +7,25 @@ import de.Flugbuchungssystem.repository.FlugRepository;
 import de.Flugbuchungssystem.repository.FlughafenRepository;
 import de.Flugbuchungssystem.repository.PassagierRepository;
 
-public class Datenerhaltung implements Serializable {
+/**
+ * Enthält alle Repositories für die Datenspeicherung.
+ */
 
+public class Datenerhaltung implements Serializable {
     private static final long serialVersionUID = 1L;
 
     private FlughafenRepository flughafenRepo;
     private FlugRepository flugRepo;
     private BuchungsRepository buchungsRepo;
     private PassagierRepository passagierRepo;
+    
+    /**
+     * Erstellt ein neues Datenerhaltung-Objekt mit allen Repositories.
+     * @param flughafenRepo Repository für Flughäfen
+     * @param flugRepo Repository für Flüge
+     * @param buchungsRepo Repository für Buchungen
+     * @param passagierRepo Repository für Passagiere
+     */
 
     public Datenerhaltung(FlughafenRepository flughafenRepo,
                     FlugRepository flugRepo,

@@ -4,9 +4,7 @@ import de.Flugbuchungssystem.model.Flug;
 import de.Flugbuchungssystem.model.SitzKategorie;
 
 /**
- * Zentralisiert die gesamte Preislogik der Anwendung.
- * Berechnet den Ticketpreis aus Basispreis, Kategoriemultiplikator
- * und Gepäckgebühr. Enthält keine Datenhaltung.
+ * Berechnet den Ticketpreis aus Basispreis, Kategoriemultiplikator und Gepäckgebühr.
  */
 public class PreisService {
 
@@ -19,7 +17,6 @@ public class PreisService {
     /**
      * Berechnet den Gesamtpreis einer Buchung.
      * Formel: Basispreis × Kategoriemultiplikator + Gepäckgebühr
-     *
      * @param flug          der gebuchte Flug
      * @param kategorie     die gewählte Sitzkategorie
      * @param gepaeckAnzahl die Anzahl der aufgegebenen Gepäckstücke
@@ -34,7 +31,6 @@ public class PreisService {
     /**
      * Berechnet die Gepäckgebühr anhand der Anzahl der Koffer.
      * Das erste Gepäckstück ist kostenlos, ab dem zweiten fallen je 30 € an.
-     *
      * @param anzahl die Anzahl der aufgegebenen Gepäckstücke
      * @return die Gepäckgebühr in Euro
      */

@@ -9,17 +9,13 @@ import de.Flugbuchungssystem.exception.BuchungNichtGefundenException;
 import de.Flugbuchungssystem.service.interfaces.IBuchungsRepository;
 
 /**
- * Verwaltet alle Buchung-Objekte der Anwendung in einer internen HashMap.
+ * Verwaltet alle Buchung-Objekte in einer HashMap.
  * Der Schlüssel ist die Buchungsnummer, dadurch ist der Zugriff in O(1) möglich.
- * Enthält keine Geschäftslogik --> nur Datenhaltung.
  */
 public class BuchungsRepository implements IBuchungsRepository, Serializable {
 	
 	private static final long serialVersionUID = 1L;
-
-    /** Interne Zuordnung von Buchungsnummer zu Buchung. */
     private HashMap<String, Buchung> buchungen;
-
     /**
      * Erstellt ein neues, leeres BuchungsRepository.
      */
@@ -30,7 +26,6 @@ public class BuchungsRepository implements IBuchungsRepository, Serializable {
     /**
      * Speichert eine neue Buchung im Repository.
      * Als Schlüssel wird die Buchungsnummer der Buchung verwendet.
-     *
      * @param buchung die zu speichernde Buchung
      */
     @Override
@@ -40,7 +35,6 @@ public class BuchungsRepository implements IBuchungsRepository, Serializable {
 
     /**
      * Sucht eine Buchung anhand ihrer Buchungsnummer.
-     *
      * @param buchungsnummer die eindeutige Buchungsnummer, z.B. „BU-0001"
      * @return die gefundene Buchung
      * @throws BuchungNichtGefundenException wenn keine Buchung mit dieser Nummer existiert
@@ -55,8 +49,6 @@ public class BuchungsRepository implements IBuchungsRepository, Serializable {
     }
 
     /**
-     * Gibt alle gespeicherten Buchungen als Liste zurück.
-     *
      * @return Liste aller Buchungen, leer wenn keine vorhanden
      */
     @Override
@@ -66,9 +58,7 @@ public class BuchungsRepository implements IBuchungsRepository, Serializable {
 
     /**
      * Löscht eine Buchung anhand ihrer Buchungsnummer aus dem Repository.
-     *
      * @param buchungsnummer die Buchungsnummer der zu löschenden Buchung
-     * @throws BuchungNichtGefundenException wenn keine Buchung mit dieser Nummer existiert
      */
     @Override
     public void loescheBuchung(String buchungsnummer) {

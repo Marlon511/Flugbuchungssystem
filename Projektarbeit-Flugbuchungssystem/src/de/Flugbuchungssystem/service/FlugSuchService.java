@@ -14,13 +14,10 @@ import de.Flugbuchungssystem.model.Flughafen;
  * Holt die vollständige Flügeliste aus dem Repository und filtert sie.
  */
 public class FlugSuchService implements IFlugSuchService {
-
-    /** Zugriff auf alle gespeicherten Flüge. */
     private IFlugRepository flugRepo;
 
     /**
      * Erstellt einen neuen FlugSuchService.
-     *
      * @param flugRepo das Repository für den Zugriff auf Flüge
      */
     public FlugSuchService(IFlugRepository flugRepo) {
@@ -30,7 +27,6 @@ public class FlugSuchService implements IFlugSuchService {
     /**
      * Sucht alle Flüge, die der angegebenen Route entsprechen.
      * Wird {@code datum} als {@code null} übergeben, wird nur nach Route gefiltert.
-     *
      * @param start das Startflughafen
      * @param ziel  der Zielflughafen
      * @param datum der gewünschte Abflugtag, oder {@code null} für alle Daten

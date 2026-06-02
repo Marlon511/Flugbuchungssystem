@@ -5,23 +5,16 @@ import de.Flugbuchungssystem.exception.*;
 import de.Flugbuchungssystem.model.*;
 import de.Flugbuchungssystem.service.interfaces.*;
 
-
 /**
  * Zuständig für Umbuchungen bestehender Buchungen auf einen neuen Flug.
- * Prüft die Verfügbarkeit des neuen Sitzes, berechnet die Preisdifferenz
- * und aktualisiert die Buchung entsprechend.
+ * Prüft die Verfügbarkeit des neuen Sitzes, berechnet die Preisdifferenz und aktualisiert die Buchung entsprechend.
  */
 public class UmbuchungsService implements IUmbuchungsService {
-
-    /** Zugriff auf die gespeicherten Buchungen. */
     private IBuchungsRepository buchungsRepo;
-
-    /** Zuständig für die Preisberechnung. */
     private PreisService preisService;
 
     /**
      * Erstellt einen neuen UmbuchungsService.
-     *
      * @param buchungsRepo das Repository für den Zugriff auf Buchungen
      * @param preisService der Service für die Preisberechnung
      */
@@ -40,13 +33,13 @@ public class UmbuchungsService implements IUmbuchungsService {
      * Stornierte Buchungen werden abgelehnt.
      * </p>
      *
-     * @param buchungsnummer  die Buchungsnummer der umzubuchenden Buchung
-     * @param neuerFlug       der neue Zielflug
-     * @param neueSitznummer  die neue Sitznummer, z.B. „B5"
+     * @param buchungsnummer = die Buchungsnummer der umzubuchenden Buchung
+     * @param neuerFlug = der neue Zielflug
+     * @param neueSitznummer = die neue Sitznummer, z.B. „B5"
      * @return die Preisdifferenz in Euro (positiv = Aufpreis, negativ = Rückerstattung)
-     * @throws IllegalStateException          wenn die Buchung bereits storniert ist
-     * @throws UngueltigeSitznummerException  wenn die neue Sitznummer nicht existiert
-     * @throws SitzNichtVerfuegbarException   wenn der neue Sitz bereits belegt ist
+     * @throws IllegalStateException wenn die Buchung bereits storniert ist
+     * @throws UngueltigeSitznummerException wenn die neue Sitznummer nicht existiert
+     * @throws SitzNichtVerfuegbarException wenn der neue Sitz bereits belegt ist
      * @throws de.Flugbuchungssystem.exception.BuchungNichtGefundenException wenn die Buchung nicht existiert
      */
     @Override

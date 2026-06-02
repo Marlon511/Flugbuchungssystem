@@ -13,13 +13,9 @@ import de.Flugbuchungssystem.model.SitzKategorie;
  * und kann nach Kategorie filtern.
  */
 public class SitzplanService {
-
-
-
     /**
      * Gibt den vollständigen Sitzplan eines Fluges auf der Konsole aus.
      * Zeigt für jeden Sitz Name, Kategorie und Belegungsstatus an.
-     *
      * @param flug der Flug, dessen Sitzplan ausgegeben werden soll
      */
     public void zeigeSitzplan(Flug flug) {
@@ -37,9 +33,8 @@ public class SitzplanService {
 
     /**
      * Gibt alle freien Sitze einer bestimmten Kategorie für einen Flug zurück.
-     *
-     * @param flug      der zu prüfende Flug
-     * @param kategorie die gewünschte Sitzkategorie
+     * @param flug = der zu prüfende Flug
+     * @param kategorie = die gewünschte Sitzkategorie
      * @return Liste der freien Sitze in der angegebenen Kategorie
      */
     public List<Sitz> zeigeFreieSitze(Flug flug, SitzKategorie kategorie) {

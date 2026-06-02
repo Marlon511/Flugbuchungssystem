@@ -25,15 +25,17 @@ public class Buchung implements Serializable {
 	/**
 	 * Erstellt eine neue Buchung. Die Buchungsnummer wird automatisch generiert
 	 * und der Status auf {@link Buchungsstatus#GEBUCHT} gesetzt.
-	 *
-	 * @param passagier     der buchende Passagier
-	 * @param flug          der gebuchte Flug
-	 * @param sitz          der zugewiesene Sitzplatz
-	 * @param gepaeckAnzahl die Anzahl der aufgegebenen Gepäckstücke
-	 * @param gesamtpreis   der Gesamtpreis in Euro
+	 * @param passagier = der buchende Passagier
+	 * @param flug = der gebuchte Flug
+	 * @param sitz = der zugewiesene Sitzplatz
+	 * @param gepaeckAnzahl = die Anzahl der aufgegebenen Gepäckstücke
+	 * @param gesamtpreis = der Gesamtpreis in Euro
 	 */
 	public Buchung(Passagier passagier, Flug flug, Sitz sitz, int gepaeckAnzahl, double gesamtpreis) {
+		// Buchungsnummer automatisch generieren, z.B. "BU-0001"
+		// %04d formatiert die Zahl mit führenden Nullen auf 4 Stellen, z.B. 1 → "0001"
 		this.buchungsnummer = "BU-" + String.format("%04d", zaehler++);
+		
 		this.passagier = passagier;
 		this.flug = flug;
 		this.sitz = sitz;
@@ -43,8 +45,6 @@ public class Buchung implements Serializable {
 	}
 
 	/**
-	 * Gibt die Buchungsnummer zurück.
-	 *
 	 * @return die eindeutige Buchungsnummer
 	 */
 	public String getBuchungsnummer() {
@@ -74,8 +74,6 @@ public class Buchung implements Serializable {
 	}
 
 	/**
-	 * Gibt den Passagier dieser Buchung zurück.
-	 *
 	 * @return der Passagier
 	 */
 	public Passagier getPassagier() {
@@ -83,8 +81,6 @@ public class Buchung implements Serializable {
 	}
 
 	/**
-	 * Gibt den gebuchten Flug zurück.
-	 *
 	 * @return der Flug
 	 */
 	public Flug getFlug() {
@@ -92,8 +88,6 @@ public class Buchung implements Serializable {
 	}
 
 	/**
-	 * Gibt den zugewiesenen Sitzplatz zurück.
-	 *
 	 * @return der Sitz
 	 */
 	public Sitz getSitz() {
@@ -101,8 +95,6 @@ public class Buchung implements Serializable {
 	}
 
 	/**
-	 * Gibt die Anzahl der aufgegebenen Gepäckstücke zurück.
-	 *
 	 * @return die Gepäckanzahl
 	 */
 	public int getGepaeckAnzahl() {
@@ -110,8 +102,6 @@ public class Buchung implements Serializable {
 	}
 
 	/**
-	 * Gibt den aktuellen Buchungsstatus zurück.
-	 *
 	 * @return der Buchungsstatus
 	 */
 	public Buchungsstatus getStatus() {
@@ -119,8 +109,6 @@ public class Buchung implements Serializable {
 	}
 
 	/**
-	 * Gibt den Gesamtpreis der Buchung zurück.
-	 *
 	 * @return der Gesamtpreis in Euro
 	 */
 	public double getGesamtpreis() {
@@ -128,8 +116,6 @@ public class Buchung implements Serializable {
 	}
 
 	/**
-	 * Setzt den Flug der Buchung, z.B. bei einer Umbuchung.
-	 *
 	 * @param flug der neue Flug
 	 */
 	public void setFlug(Flug flug) {
@@ -137,8 +123,6 @@ public class Buchung implements Serializable {
 	}
 
 	/**
-	 * Setzt den Sitzplatz der Buchung, z.B. bei einer Umbuchung.
-	 *
 	 * @param sitz der neue Sitzplatz
 	 */
 	public void setSitz(Sitz sitz) {
@@ -146,8 +130,6 @@ public class Buchung implements Serializable {
 	}
 
 	/**
-	 * Setzt den Status der Buchung.
-	 *
 	 * @param status der neue Buchungsstatus
 	 */
 	public void setStatus(Buchungsstatus status) {
@@ -155,8 +137,6 @@ public class Buchung implements Serializable {
 	}
 
 	/**
-	 * Aktualisiert den Gesamtpreis der Buchung.
-	 *
 	 * @param preis der neue Gesamtpreis in Euro
 	 */
 	public void setGesamtpreis(double preis) {
@@ -166,7 +146,6 @@ public class Buchung implements Serializable {
 	/**
 	 * Gibt eine lesbare Darstellung der Buchung zurück.
 	 * Beispiel: {@code "BU-0001 | Max Mustermann | FRA → JFK | A3 | GEBUCHT | 450.0 EUR"}
-	 *
 	 * @return formatierte Zeichenkette mit allen wesentlichen Buchungsdaten
 	 */
 	public String toString() {

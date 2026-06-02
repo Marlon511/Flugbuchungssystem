@@ -6,15 +6,12 @@ import java.util.List;
 import de.Flugbuchungssystem.model.Passagier;
 
 /**
- * Verwaltet alle registrierten Passagiere der Anwendung in einer internen Liste.
- * Ermöglicht die Suche nach E-Mail-Adresse, um zu prüfen ob ein Passagier
- * bereits bekannt ist. Enthält keine Geschäftslogik, nur Datenhaltung.
+ * Verwaltet alle registrierten Passagiere in einer Liste.
+ * Ermöglicht die Suche nach E-Mail-Adresse, um zu prüfen ob ein Passagier bereits bekannt ist.
  */
 public class PassagierRepository implements Serializable {
 	
 	private static final long serialVersionUID = 1L;
-
-    /** Interne Liste aller registrierten Passagiere. */
     private ArrayList<Passagier> passagiere;
 
     /**
@@ -26,7 +23,6 @@ public class PassagierRepository implements Serializable {
 
     /**
      * Fügt einen neuen Passagier in das Repository ein.
-     *
      * @param passagier der hinzuzufügende Passagier
      */
     public void addPassagier(Passagier passagier) {
@@ -37,7 +33,6 @@ public class PassagierRepository implements Serializable {
      * Sucht einen Passagier anhand seiner E-Mail-Adresse.
      * Gibt {@code null} zurück, wenn kein Passagier mit dieser Adresse gefunden wird —
      * so kann der Aufrufer prüfen, ob der Passagier bereits registriert ist.
-     *
      * @param email die E-Mail-Adresse des gesuchten Passagiers
      * @return der gefundene Passagier, oder {@code null} wenn nicht vorhanden
      */
@@ -52,7 +47,6 @@ public class PassagierRepository implements Serializable {
 
     /**
      * Gibt alle registrierten Passagiere zurück.
-     *
      * @return Liste aller Passagiere, leer wenn keine vorhanden
      */
     public List<Passagier> getAllePassagiere() {

@@ -10,22 +10,13 @@ import java.util.List;
 public class Fluggesellschaft implements Serializable{
 	
 	private static final long serialVersionUID = 1L;
-
-	/** Der vollständige Name der Fluggesellschaft, z.B. „Lufthansa". */
 	private String name;
-	
-	/** Der Heimflughafen einer Fluggesellschaft. z.b „Frankfurt Airport"  */
 	private Flughafen heimflughafen;
-
-	/** Das IATA-Kürzel der Fluggesellschaft, z.B. „LH". */
 	private String code;
-
-	/** Alle Flugzeuge, die zur Flotte dieser Gesellschaft gehören. */
 	private List<Flugzeug> flotte;
 
 	/**
 	 * Erstellt eine neue Fluggesellschaft mit leerem Fuhrpark und leerer Flugliste.
-	 *
 	 * @param name der vollständige Name der Fluggesellschaft
 	 * @param code das IATA-Kürzel der Fluggesellschaft
 	 */
@@ -38,7 +29,6 @@ public class Fluggesellschaft implements Serializable{
 
 	/**
 	 * Fügt ein Flugzeug zur Flotte der Gesellschaft hinzu.
-	 *
 	 * @param flugzeug das hinzuzufügende Flugzeug
 	 */
 	public void addFlugzeug(Flugzeug flugzeug) {
@@ -46,8 +36,6 @@ public class Fluggesellschaft implements Serializable{
 	}
 
 	/**
-	 * Gibt die Flotte der Fluggesellschaft zurück.
-	 *
 	 * @return Liste aller Flugzeuge
 	 */
 	public List<Flugzeug> getFlotte() {
@@ -59,8 +47,6 @@ public class Fluggesellschaft implements Serializable{
 		System.out.println("Der Heimflughafen wurde auf " + heimflughafen.getName()+ " gesetzt.");
 	}
 	/**
-	 * Gibt den Heimflughafen einer Fluggesellschaft zurück.
-	 *
 	 * @return den Heimflughafen
 	 */	
 	public Flughafen getHeimflughafen() {
@@ -68,8 +54,6 @@ public class Fluggesellschaft implements Serializable{
 	}
 
 	/**
-	 * Gibt den Namen der Fluggesellschaft zurück.
-	 *
 	 * @return der Name
 	 */
 	public String getName() {
@@ -77,8 +61,6 @@ public class Fluggesellschaft implements Serializable{
 	}
 
 	/**
-	 * Gibt das Kürzel der Fluggesellschaft zurück.
-	 *
 	 * @return das IATA-Kürzel
 	 */
 	public String getCode() {
@@ -88,7 +70,6 @@ public class Fluggesellschaft implements Serializable{
 	/**
 	 * Gibt eine lesbare Darstellung der Fluggesellschaft zurück.
 	 * Beispiel: {@code "LH – Lufthansa"}
-	 *
 	 * @return formatierte Zeichenkette mit Kürzel und Name
 	 */
 	public String toString() {

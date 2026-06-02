@@ -13,42 +13,25 @@ import de.Flugbuchungssystem.model.*;
 public class Flug implements Serializable{
 	
 	private static final long serialVersionUID = 1L;
-	
-	/** Die eindeutige Flugnummer, z.B. „LH400". */
 	private String flugnummer;
-
-	/** Die Fluggesellschaft, die diesen Flug durchführt. */
 	private Fluggesellschaft airline;
-
-	/** Der Startflughafen. */
 	private Flughafen start;
-
-	/** Der Zielflughafen. */
 	private Flughafen ziel;
-
-	/** Datum und Uhrzeit des Abflugs. */
 	private LocalDateTime abflugzeit;
-
-	/** Datum und Uhrzeit der Ankunft. */
 	private LocalDateTime ankunftszeit;
-
-	/** Der Grundpreis des Flugs in Euro (Economy ohne Kategoriemultiplikator). */
 	private double basispreis;
-
-	/** Das für diesen Flug eingesetzte Flugzeug. */
 	private Flugzeug flugzeug;
 
 	/**
 	 * Erstellt einen neuen Flug mit allen notwendigen Daten.
-	 *
-	 * @param flugnummer   die eindeutige Flugnummer
-	 * @param airline      die durchführende Fluggesellschaft
-	 * @param start        der Startflughafen
-	 * @param ziel         der Zielflughafen
-	 * @param abflugzeit   Datum und Uhrzeit des Abflugs
-	 * @param ankunftszeit Datum und Uhrzeit der Ankunft
-	 * @param basispreis   der Grundpreis in Euro
-	 * @param flugzeug     das eingesetzte Flugzeug
+	 * @param flugnummer = die eindeutige Flugnummer
+	 * @param airline = die durchführende Fluggesellschaft
+	 * @param start = der Startflughafen
+	 * @param ziel = der Zielflughafen
+	 * @param abflugzeit = Datum und Uhrzeit des Abflugs
+	 * @param ankunftszeit = Datum und Uhrzeit der Ankunft
+	 * @param basispreis = der Grundpreis in Euro
+	 * @param flugzeug = das eingesetzte Flugzeug
 	 */
 	public Flug(String flugnummer, Fluggesellschaft airline, Flughafen start, Flughafen ziel,
 			LocalDateTime abflugzeit, LocalDateTime ankunftszeit, double basispreis, Flugzeug flugzeug) {
@@ -63,8 +46,6 @@ public class Flug implements Serializable{
 	}
 
 	/**
-	 * Gibt die Flugnummer zurück.
-	 *
 	 * @return die Flugnummer
 	 */
 	public String getFlugnummer() {
@@ -72,8 +53,6 @@ public class Flug implements Serializable{
 	}
 
 	/**
-	 * Gibt die Fluggesellschaft zurück.
-	 *
 	 * @return die Fluggesellschaft
 	 */
 	public Fluggesellschaft getAirline() {
@@ -81,8 +60,6 @@ public class Flug implements Serializable{
 	}
 
 	/**
-	 * Gibt den Startflughafen zurück.
-	 *
 	 * @return der Startflughafen
 	 */
 	public Flughafen getStart() {
@@ -90,8 +67,6 @@ public class Flug implements Serializable{
 	}
 
 	/**
-	 * Gibt den Zielflughafen zurück.
-	 *
 	 * @return der Zielflughafen
 	 */
 	public Flughafen getZiel() {
@@ -99,8 +74,6 @@ public class Flug implements Serializable{
 	}
 
 	/**
-	 * Gibt die Abflugzeit zurück.
-	 *
 	 * @return Datum und Uhrzeit des Abflugs
 	 */
 	public LocalDateTime getAbflugzeit() {
@@ -108,8 +81,6 @@ public class Flug implements Serializable{
 	}
 
 	/**
-	 * Gibt die Ankunftszeit zurück.
-	 *
 	 * @return Datum und Uhrzeit der Ankunft
 	 */
 	public LocalDateTime getAnkunftszeit() {
@@ -117,8 +88,6 @@ public class Flug implements Serializable{
 	}
 
 	/**
-	 * Gibt den Basispreis des Flugs zurück.
-	 *
 	 * @return der Grundpreis in Euro
 	 */
 	public double getBasispreis() {
@@ -126,8 +95,6 @@ public class Flug implements Serializable{
 	}
 
 	/**
-	 * Gibt das eingesetzte Flugzeug zurück.
-	 *
 	 * @return das Flugzeug
 	 */
 	public Flugzeug getFlugzeug() {
@@ -135,9 +102,6 @@ public class Flug implements Serializable{
 	}
 
 	/**
-	 * Gibt die Route als IATA-Code-Paar zurück.
-	 * Beispiel: {@code "FRA → JFK"}
-	 *
 	 * @return die Route als Zeichenkette
 	 */
 	public String baueRoute() {
@@ -158,7 +122,6 @@ public class Flug implements Serializable{
 
 	/**
 	 * Prüft, ob dieser Flug am angegebenen Datum stattfindet.
-	 *
 	 * @param datum das zu prüfende Datum
 	 * @return {@code true}, wenn der Abflug am angegebenen Datum liegt
 	 */
@@ -169,7 +132,6 @@ public class Flug implements Serializable{
 	/**
 	 * Gibt die freien Sitze der angegebenen Kategorie zurück.
 	 * Delegiert die Abfrage an das zugewiesene Flugzeug.
-	 *
 	 * @param kategorie die gewünschte Sitzkategorie
 	 * @return Liste der freien Sitze in der angegebenen Kategorie
 	 */
@@ -180,7 +142,6 @@ public class Flug implements Serializable{
 	/**
 	 * Gibt eine lesbare Darstellung des Flugs zurück.
 	 * Beispiel: {@code "LH400 | FRA → JFK | 2026-06-01T10:00 → 2026-06-01T14:00"}
-	 *
 	 * @return formatierte Zeichenkette mit Flugnummer, Route und Zeiten
 	 */
 	public String toString() {
