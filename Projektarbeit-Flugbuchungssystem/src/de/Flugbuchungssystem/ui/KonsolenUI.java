@@ -27,51 +27,31 @@ import de.Flugbuchungssystem.service.VerwaltungsService;
 
 /**
  * Steuert das interaktive Konsolenmenü der Anwendung.
- * Nimmt alle Nutzereingaben entgegen, delegiert die Verarbeitung
- * an die zuständigen Services und gibt Ergebnisse auf der Konsole aus.
- * Enthält keine Geschäftslogik.
+ * Die Klasse verarbeitet die Eingaben des Benutzers, übergibt die Aufgaben an die entsprechenden Services und zeigt die Ergebnisse auf der Konsole an.
  */
 public class KonsolenUI {
 
-    /** Repository für den Zugriff auf alle gespeicherten Flughäfen. */
     private final FlughafenRepository flughafenRepo;
-
-    /** Repository für den Zugriff auf alle gespeicherten Flüge. */
     private final FlugRepository flugRepo;
-
-    /** Repository für den Zugriff auf alle gespeicherten Buchungen. */
     private final BuchungsRepository buchungsRepo;
-
-    /** Repository für den Zugriff auf alle registrierten Passagiere. */
     private final PassagierRepository passagierRepo;
-
-    /** Service für das Erstellen und Stornieren von Buchungen. */
     private final BuchungsService buchungsService;
-
-    /** Service für das Umbuchen bestehender Buchungen. */
     private final UmbuchungsService umbuchungsService;
-
-    /** Service für die Suche nach Flügen. */
     private final FlugSuchService flugSuchService;
-
-    /** Service für die Darstellung und Abfrage von Sitzplänen. */
     private final SitzplanService sitzplanService;
-
-    /** Service für Verwaltungs- und Administrationsfunktionen. */
     private final VerwaltungsService verwaltungsService;
 
     /**
      * Erstellt eine neue KonsolenUI mit allen benötigten Abhängigkeiten.
-     *
-     * @param flughafenRepo    das Repository für Flughäfen
-     * @param flugRepo         das Repository für Flüge
-     * @param buchungsRepo     das Repository für Buchungen
-     * @param passagierRepo    das Repository für Passagiere
-     * @param buchungsService  der Service für Buchungsoperationen
-     * @param umbuchungsService der Service für Umbuchungen
-     * @param flugSuchService  der Service für die Flugsuche
-     * @param sitzplanService  der Service für Sitzpläne
-     * @param verwaltungsService der Service für Verwaltungsfunktionen
+     * @param flughafenRepo = das Repository für Flughäfen
+     * @param flugRepo = das Repository für Flüge
+     * @param buchungsRepo = das Repository für Buchungen
+     * @param passagierRepo = das Repository für Passagiere
+     * @param buchungsService = der Service für Buchungsoperationen
+     * @param umbuchungsService = der Service für Umbuchungen
+     * @param flugSuchService = der Service für die Flugsuche
+     * @param sitzplanService = der Service für Sitzpläne
+     * @param verwaltungsService = der Service für Verwaltungsfunktionen
      */
     public KonsolenUI(FlughafenRepository flughafenRepo,
                       FlugRepository flugRepo,
@@ -142,14 +122,13 @@ public class KonsolenUI {
         scanner.close();
     }
 
-    // -------------------------------------------------------
+   
     // 1 - Flüge suchen
-    // -------------------------------------------------------
+  
 
     /**
      * Fragt Start- und Zielflughafen sowie ein optionales Datum ab
      * und gibt alle passenden Flüge auf der Konsole aus.
-     *
      * @param scanner der aktive Scanner für Nutzereingaben
      */
     private void flugeSuchen(Scanner scanner) {
@@ -199,15 +178,13 @@ public class KonsolenUI {
         }
     }
 
-    // -------------------------------------------------------
+
     // 2 - Flug buchen
-    // -------------------------------------------------------
+
 
     /**
      * Führt den vollständigen Buchungsvorgang durch.
-     * Sucht den Passagier anhand der E-Mail oder legt ihn neu an,
-     * lässt Flug, Sitz und Gepäckanzahl wählen und erstellt die Buchung.
-     *
+     * Sucht den Passagier anhand der E-Mail oder legt ihn neu an, lässt Flug, Sitz und Gepäckanzahl wählen und erstellt die Buchung.
      * @param scanner der aktive Scanner für Nutzereingaben
      */
     private void flugBuchen(Scanner scanner) {
@@ -286,14 +263,13 @@ public class KonsolenUI {
         }
     }
 
-    // -------------------------------------------------------
+  
     // 3 - Buchung stornieren
-    // -------------------------------------------------------
+  
 
     /**
      * Zeigt alle vorhandenen Buchungen an, fragt eine Buchungsnummer ab
      * und storniert die entsprechende Buchung.
-     *
      * @param scanner der aktive Scanner für Nutzereingaben
      */
     private void buchungStornieren(Scanner scanner) {
@@ -311,14 +287,12 @@ public class KonsolenUI {
         }
     }
 
-    // -------------------------------------------------------
+
     // 4 - Buchung umbuchen
-    // -------------------------------------------------------
+
 
     /**
-     * Zeigt alle Buchungen an, fragt Buchungsnummer, neuen Flug und neuen Sitz ab
-     * und bucht die Buchung entsprechend um.
-     *
+     * Zeigt alle Buchungen an, fragt Buchungsnummer, neuen Flug und neuen Sitz ab und bucht die Buchung entsprechend um.
      * @param scanner der aktive Scanner für Nutzereingaben
      */
     private void buchungUmbuchen(Scanner scanner) {
@@ -361,14 +335,13 @@ public class KonsolenUI {
         }
     }
 
-    // -------------------------------------------------------
+
     // 5 - Sitzplan anzeigen
-    // -------------------------------------------------------
+
 
     /**
      * Fragt eine Flugnummer ab und gibt den vollständigen Sitzplan
      * des gewählten Fluges auf der Konsole aus.
-     *
      * @param scanner der aktive Scanner für Nutzereingaben
      */
     private void sitzplanAnzeigen(Scanner scanner) {
@@ -388,14 +361,10 @@ public class KonsolenUI {
         }
     }
 
-    // -------------------------------------------------------
     // 6 - Freie Sitze anzeigen
-    // -------------------------------------------------------
 
     /**
-     * Fragt Flugnummer und Sitzkategorie ab und gibt alle freien Sitze
-     * der gewählten Kategorie für den gewählten Flug aus.
-     *
+     * Fragt Flugnummer und Sitzkategorie ab und gibt alle freien Sitze der gewählten Kategorie für den gewählten Flug aus.
      * @param scanner der aktive Scanner für Nutzereingaben
      */
     private void freieSitzeAnzeigen(Scanner scanner) {
@@ -440,10 +409,8 @@ public class KonsolenUI {
         }
     }
 
-    // -------------------------------------------------------
     // 7 - Alle Buchungen anzeigen
-    // -------------------------------------------------------
-
+  
     /**
      * Gibt alle gespeicherten Buchungen auf der Konsole aus.
      */
@@ -459,14 +426,13 @@ public class KonsolenUI {
         }
     }
 
-    // -------------------------------------------------------
+    
     // 9 - Gepäckübersicht
-    // -------------------------------------------------------
+   
 
     /**
      * Fragt eine Flugnummer ab und gibt die Gepäckübersicht
      * aller Buchungen für diesen Flug aus.
-     *
      * @param scanner der aktive Scanner für Nutzereingaben
      */
     private void gepaeckUebersicht(Scanner scanner) {
