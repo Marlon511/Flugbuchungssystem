@@ -14,7 +14,6 @@ import de.Flugbuchungssystem.repository.PassagierRepository;
 
 /**
  * Erstellt alle Testdaten für den initialen Programmstart.
- * Wird von {@link Main} nur aufgerufen, wenn keine gespeicherten CSV-Daten vorhanden sind.
  * Enthält realistische Flughäfen, Fluggesellschaften, Flugzeuge, Flüge und Passagiere.
  */
 public class TestdatenFactory {
@@ -22,9 +21,8 @@ public class TestdatenFactory {
     /**
      * Befüllt alle übergebenen Repositories mit vordefinierten Testdaten.
      * Legt Flughäfen, Fluggesellschaften, Flugzeuge, Flüge und Passagiere an.
-     *
      * @param flughafenRepo das Repository für Flughäfen
-     * @param flugRepo      das Repository für Flüge
+     * @param flugRepo das Repository für Flüge
      * @param passagierRepo das Repository für Passagiere
      */
     public static void laden(FlughafenRepository flughafenRepo,
