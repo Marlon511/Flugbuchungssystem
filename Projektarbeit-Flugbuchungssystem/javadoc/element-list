@@ -1,1 +1,6 @@
+de.Flugbuchungssystem.exception
+de.Flugbuchungssystem.interfaces
+de.Flugbuchungssystem.model
+de.Flugbuchungssystem.repository
 de.Flugbuchungssystem.service
+de.Flugbuchungssystem.ui

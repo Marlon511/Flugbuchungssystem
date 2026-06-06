@@ -9,8 +9,8 @@ import de.Flugbuchungssystem.model.Flug;
 import de.Flugbuchungssystem.model.Sitz;
 
 /**
- * Zeigt Auslastungsberichte & Gepäckübersichten an.
- * Liest nur aus den Repositories — schreibt und verändert nichts.
+ * Zeigt Auslastungsberichte und Gepäckübersichten an.
+ * Liest nur aus den Repositories, schreibt und verändert nichts.
  */
 public class VerwaltungsService {
     private IFlugRepository flugRepo;
