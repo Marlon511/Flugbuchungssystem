@@ -1,1 +1,0 @@
-packageSearchIndex = [{"l":"Alle Packages","u":"allpackages-index.html"},{"l":"de.Flugbuchungssystem.exception"},{"l":"de.Flugbuchungssystem.model"},{"l":"de.Flugbuchungssystem.repository"},{"l":"de.Flugbuchungssystem.service"},{"l":"de.Flugbuchungssystem.service.interfaces"},{"l":"de.Flugbuchungssystem.ui"}];updateSearchResults();
