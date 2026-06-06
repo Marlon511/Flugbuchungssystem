@@ -5,8 +5,7 @@ import java.util.List;
 
 /**
  * Repräsentiert ein Flugzeug mit Modell, Kennung, Standort und Sitzplan.
- * Beim Erstellen werden alle Sitze der drei Kategorien (FIRST, BUSINESS, ECONOMY)
- * automatisch generiert und in einer internen Liste gespeichert.
+ * Beim Erstellen werden alle Sitze der drei Kategorien (FIRST, BUSINESS, ECONOMY) automatisch generiert und in einer internen Liste gespeichert.
  */
 public class Flugzeug implements Serializable {
 	

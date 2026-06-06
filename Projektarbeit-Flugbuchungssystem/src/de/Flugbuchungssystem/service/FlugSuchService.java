@@ -4,9 +4,9 @@ import java.time.LocalDate;
 import java.util.ArrayList;
 import java.util.List;
 
+import de.Flugbuchungssystem.interfaces.IFlugRepository;
+import de.Flugbuchungssystem.interfaces.IFlugSuchService;
 import de.Flugbuchungssystem.model.Flug;
-import de.Flugbuchungssystem.service.interfaces.IFlugRepository;
-import de.Flugbuchungssystem.service.interfaces.IFlugSuchService;
 import de.Flugbuchungssystem.model.Flughafen;
 
 /**

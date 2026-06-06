@@ -2,8 +2,8 @@ package de.Flugbuchungssystem.service;
 
 import de.Flugbuchungssystem.model.*;
 import de.Flugbuchungssystem.exception.*;
+import de.Flugbuchungssystem.interfaces.*;
 import de.Flugbuchungssystem.model.*;
-import de.Flugbuchungssystem.service.interfaces.*;
 
 /**
  * Zuständig für Umbuchungen bestehender Buchungen auf einen neuen Flug.

@@ -1,4 +1,4 @@
-package de.Flugbuchungssystem.service.interfaces;
+package de.Flugbuchungssystem.interfaces;
 
 import de.Flugbuchungssystem.model.*;
 

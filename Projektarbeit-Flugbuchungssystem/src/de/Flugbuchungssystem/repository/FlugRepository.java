@@ -4,8 +4,8 @@ import java.util.ArrayList;
 import java.util.List;
 
 import de.Flugbuchungssystem.exception.*;
+import de.Flugbuchungssystem.interfaces.*;
 import de.Flugbuchungssystem.model.*;
-import de.Flugbuchungssystem.service.interfaces.*;
 
 /**
  * Verwaltet alle Flug-Objekte der Anwendung in einer internen Liste.

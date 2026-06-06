@@ -4,8 +4,8 @@ import java.util.ArrayList;
 import java.util.List;
 
 import de.Flugbuchungssystem.exception.FlughafenNichtGefundenException;
+import de.Flugbuchungssystem.interfaces.IFlughafenRepository;
 import de.Flugbuchungssystem.model.Flughafen;
-import de.Flugbuchungssystem.service.interfaces.IFlughafenRepository;
 
 /**
  * Verwaltet alle Flughafen-Objekte in einer Liste.

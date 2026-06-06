@@ -6,7 +6,7 @@ import java.util.List;
 
 import de.Flugbuchungssystem.model.Buchung;
 import de.Flugbuchungssystem.exception.BuchungNichtGefundenException;
-import de.Flugbuchungssystem.service.interfaces.IBuchungsRepository;
+import de.Flugbuchungssystem.interfaces.IBuchungsRepository;
 
 /**
  * Verwaltet alle Buchung-Objekte in einer HashMap.

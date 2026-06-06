@@ -3,9 +3,9 @@ package de.Flugbuchungssystem.service;
 import java.time.LocalDate;
 import java.time.temporal.ChronoUnit;
 
+import de.Flugbuchungssystem.interfaces.IBuchungsRepository;
 import de.Flugbuchungssystem.model.Buchung;
 import de.Flugbuchungssystem.model.Buchungsstatus;
-import de.Flugbuchungssystem.service.interfaces.IBuchungsRepository;
 
 /**
  * Berechnet die Stornogebühr und setzt den Status der Buchung auf STORNIERT.

@@ -50,7 +50,14 @@ public class Buchung implements Serializable {
 	public String getBuchungsnummer() {
 		return buchungsnummer;
 	}
-
+	
+	/**
+	 * Setzt den Buchungszähler auf den höchsten vorhandenen Wert.
+	 * Wird nach dem Laden gespeicherter Daten aufgerufen.
+	 *
+	 * @param buchungen Liste aller geladenen Buchungen
+	 */
+	
 	public static void aktualisiereZaehler(List<Buchung> buchungen) {
 		int hoechsteNummer = 0;
 

@@ -3,10 +3,10 @@ package de.Flugbuchungssystem.service;
 import de.Flugbuchungssystem.model.Buchung;
 import de.Flugbuchungssystem.exception.SitzNichtVerfuegbarException;
 import de.Flugbuchungssystem.exception.UngueltigeSitznummerException;
+import de.Flugbuchungssystem.interfaces.IBuchungsRepository;
+import de.Flugbuchungssystem.interfaces.IBuchungsService;
 import de.Flugbuchungssystem.model.Flug;
 import de.Flugbuchungssystem.model.Sitz;
-import de.Flugbuchungssystem.service.interfaces.IBuchungsRepository;
-import de.Flugbuchungssystem.service.interfaces.IBuchungsService;
 import de.Flugbuchungssystem.model.Passagier;
 
 /**

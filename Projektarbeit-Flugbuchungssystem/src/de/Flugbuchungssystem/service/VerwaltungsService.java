@@ -2,11 +2,11 @@ package de.Flugbuchungssystem.service;
 
 import java.util.List;
 
+import de.Flugbuchungssystem.interfaces.IBuchungsRepository;
+import de.Flugbuchungssystem.interfaces.IFlugRepository;
 import de.Flugbuchungssystem.model.Buchung;
 import de.Flugbuchungssystem.model.Flug;
 import de.Flugbuchungssystem.model.Sitz;
-import de.Flugbuchungssystem.service.interfaces.IBuchungsRepository;
-import de.Flugbuchungssystem.service.interfaces.IFlugRepository;
 
 /**
  * Zeigt Auslastungsberichte & Gepäckübersichten an.
