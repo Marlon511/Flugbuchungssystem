@@ -7,5 +7,6 @@ dies ist unsere Abgabe des Projekts. Anbei erkläre ich Ihnen, in welchem Ordner
 - Unter dem Ordner "javadoc" finden Sie unsere generierten HTML Dateien.
 - Unter dem Ordner "docs" finden Sie unsere Mitschriften aus den Meetings.
 
-Falls Fragen bestehen können Sie sich gerne jederzeit bei einem der Gruppenmitglieder melden.
+Falls Fragen bestehen können Sie sich gerne jederzeit bei einem der Gruppenmitglieder melden. 
+
 LG Marlon, Alex, Neele, Ouail, Enrico & Nikola
