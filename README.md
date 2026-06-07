@@ -4,7 +4,7 @@ dies ist unsere Abgabe des Projekts. Anbei erkläre ich ihnen, in welchem Ordner
 - Unter dem Ordner "src" finden sie unseren gesamten Programmcode.
 - Unter dem Ordner "report" finden sie unsere schriftliche Ausarbeitung.
 - Unter dem Ordner "presentation" finden sie unsere Präsentation & das Handout zur Präsentation.
-- Unter dem Ordner "javadoc" finden sie unsere generierten HTML Datein.
+- Unter dem Ordner "javadoc" finden sie unsere generierten HTML Dateien.
 - Unter dem Ordner "docs" finden sie unsere Mitschriften aus den Meetings.
 
 Falls Fragen bestehen können sie sich gerne jederzeit bei einem der Gruppenmitglieder melden.
