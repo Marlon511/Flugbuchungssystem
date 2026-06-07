@@ -31,11 +31,11 @@ public class TestdatenFactory {
 
         // --- Flughäfen ---
         Flughafen frankfurt = new Flughafen("Frankfurt am Main", "FRA", "Frankfurt", "DE");
-        Flughafen newYork   = new Flughafen("John F. Kennedy International", "JFK", "New York", "US");
-        Flughafen muenchen  = new Flughafen("München Franz Josef Strauss", "MUC", "München", "DE");
-        Flughafen dubai     = new Flughafen("Dubai International Airport", "DXB", "Dubai", "VAE");
-        Flughafen london    = new Flughafen("London Heathrow", "LHR", "London", "GB");
-        Flughafen paris     = new Flughafen("Paris Charles de Gaulle", "CDG", "Paris", "FR");
+        Flughafen newYork = new Flughafen("John F. Kennedy International", "JFK", "New York", "US");
+        Flughafen muenchen = new Flughafen("München Franz Josef Strauss", "MUC", "München", "DE");
+        Flughafen dubai = new Flughafen("Dubai International Airport", "DXB", "Dubai", "VAE");
+        Flughafen london = new Flughafen("London Heathrow", "LHR", "London", "GB");
+        Flughafen paris = new Flughafen("Paris Charles de Gaulle", "CDG", "Paris", "FR");
 
         flughafenRepo.addFlughafen(frankfurt);
         flughafenRepo.addFlughafen(newYork);
@@ -70,14 +70,14 @@ public class TestdatenFactory {
         // --- Flüge ---
         // Lufthansa: FRA → JFK
         flugRepo.addFlug(new Flug("LH400", lufthansa, frankfurt, newYork,
-                LocalDateTime.of(2026, 6, 15, 10, 0),
-                LocalDateTime.of(2026, 6, 15, 20, 30), 499.99, flugzeug1));
+                LocalDateTime.of(2026, 6, 14, 10, 0),
+                LocalDateTime.of(2026, 6, 14, 20, 30), 499.99, flugzeug1));
         flugRepo.addFlug(new Flug("LH402", lufthansa, frankfurt, newYork,
-                LocalDateTime.of(2026, 6, 16, 11, 0),
-                LocalDateTime.of(2026, 6, 16, 21, 30), 519.99, flugzeug1));
+                LocalDateTime.of(2026, 8, 16, 11, 0),
+                LocalDateTime.of(2026, 8, 16, 21, 30), 519.99, flugzeug1));
         flugRepo.addFlug(new Flug("LH404", lufthansa, frankfurt, newYork,
-                LocalDateTime.of(2026, 6, 17, 9, 0),
-                LocalDateTime.of(2026, 6, 17, 19, 30), 519.99, flugzeug1));
+                LocalDateTime.of(2026, 6, 19, 9, 0),
+                LocalDateTime.of(2026, 6, 19, 19, 30), 519.99, flugzeug1));
 
         // Lufthansa: MUC → FRA
         flugRepo.addFlug(new Flug("LH200", lufthansa, muenchen, frankfurt,

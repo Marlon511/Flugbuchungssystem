@@ -17,8 +17,8 @@ public class PreisService {
     /**
      * Berechnet den Gesamtpreis einer Buchung.
      * Formel: Basispreis × Kategoriemultiplikator + Gepäckgebühr
-     * @param flug          der gebuchte Flug
-     * @param kategorie     die gewählte Sitzkategorie
+     * @param flug der gebuchte Flug
+     * @param kategorie die gewählte Sitzkategorie
      * @param gepaeckAnzahl die Anzahl der aufgegebenen Gepäckstücke
      * @return der Gesamtpreis in Euro
      */
