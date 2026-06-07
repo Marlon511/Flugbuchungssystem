@@ -1,1 +1,5 @@
 # Flugbuchungssystem
+Guten Tag Herr Olt,
+dies ist unsere Abgabe des Projekts. Anbei erkläre ich ihnen, in welchem Ordner was gespeichert wird.
+- Unter dem Ordner "src" finden sie unseren gesamten Programmcode.
+- Unter dem Ordner "report" finden sie unsere schriftliche Ausarbeitung.
